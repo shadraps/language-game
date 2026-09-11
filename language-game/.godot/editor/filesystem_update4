@@ -1,1 +1,3 @@
 res://scenes/playground.tscn
+res://nodes/player.tscn
+res://scripts/player/player.gd

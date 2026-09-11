@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://oqwbubno4dgk"]
 
+[ext_resource type="Script" uid="uid://c0wancivl68jt" path="res://scripts/player/player.gd" id="1_bms3g"]
 [ext_resource type="Texture2D" uid="uid://chdt4pgdo1msr" path="res://sprites/characters/alien_guy.png" id="1_u63mc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3se44"]
 radius = 13.038404
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1211654961]
+[node name="Player" type="CharacterBody2D" unique_id=1211654961]
+script = ExtResource("1_bms3g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1052077679]
 shape = SubResource("CircleShape2D_3se44")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1998450899]
+position = Vector2(0, -4)
 texture = ExtResource("1_u63mc")
