@@ -1,3 +1,8 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1789143807
+::res://::1789144408
 icon.svg::CompressedTexture2D::200882800674922145::1789143799::1789143814::1::::<><><>0<>0<>5d58bca8a94186b8f1c8cc8b607b757d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://scenes/::1789144338
+playground.tscn::PackedScene::4144608362498987894::1789144338::0::1::::<><><>0<>0<><>::
+::res://sprites/::1789144422
+::res://sprites/characters/::1789144922
+alien_guy.png::CompressedTexture2D::5271562614275542965::1789144922::1789144923::1::::<><><>0<>0<>e980984adc447f27ad60b9d52f359ba9<>res://.godot/imported/alien_guy.png-580ff1b042e6f3259b48af0e3452fbba.ctex::
