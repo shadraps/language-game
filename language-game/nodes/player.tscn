@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c0wancivl68jt" path="res://scripts/player/player.gd" id="1_bms3g"]
 [ext_resource type="Texture2D" uid="uid://chdt4pgdo1msr" path="res://sprites/characters/alien_guy.png" id="1_u63mc"]
+[ext_resource type="Script" uid="uid://cgvbf23pnhqwv" path="res://scripts/player/player_state_machine.gd" id="3_me0cc"]
+[ext_resource type="Script" uid="uid://ceaqs8poocn0s" path="res://scripts/player/states/state_idle.gd" id="4_hqdnm"]
+[ext_resource type="Script" uid="uid://kt181oaa4jnr" path="res://scripts/player/states/state_walk.gd" id="5_7lbay"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3se44"]
 radius = 13.038404
@@ -15,3 +18,12 @@ shape = SubResource("CircleShape2D_3se44")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1998450899]
 position = Vector2(0, -4)
 texture = ExtResource("1_u63mc")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1362797478]
+script = ExtResource("3_me0cc")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1791962971]
+script = ExtResource("4_hqdnm")
+
+[node name="Walk" type="Node" parent="StateMachine" unique_id=1139135848]
+script = ExtResource("5_7lbay")
