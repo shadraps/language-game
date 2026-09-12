@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ct21gw2ogrs2b"]
+
+[ext_resource type="Script" uid="uid://bge82p83wh3vh" path="res://scripts/dialog/dialog_player.gd" id="1_pkfvy"]
+
+[node name="DialogPlayer" type="CanvasLayer" unique_id=1797860898]
+script = ExtResource("1_pkfvy")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1314980279]
+offset_left = 122.0
+offset_top = 196.0
+offset_right = 348.0
+offset_bottom = 253.0
+
+[node name="TextLabel" type="Label" parent="." unique_id=719694160]
+process_mode = 3
+custom_minimum_size = Vector2(200, 50)
+custom_maximum_size = Vector2(200, 50)
+offset_left = 122.0
+offset_top = 196.0
+offset_right = 322.0
+offset_bottom = 246.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+autowrap_mode = 2

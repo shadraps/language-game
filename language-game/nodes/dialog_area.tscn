@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ckfrxcdqf25ja"]
+
+[ext_resource type="Script" uid="uid://7yxtxrbnwc8k" path="res://scripts/dialog/dialog_area.gd" id="1_7l031"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7l031"]
+
+[node name="DialogArea" type="Area2D" unique_id=832969680]
+process_mode = 3
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_7l031")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2094288485]
+shape = SubResource("RectangleShape2D_7l031")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
