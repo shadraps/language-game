@@ -20,6 +20,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	enabled = false
 	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact") and enabled:
+		print('interact')
+	
 func update_display() -> void:
 	panel_container.visible = enabled
 	
