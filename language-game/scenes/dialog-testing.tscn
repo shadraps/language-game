@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://bgviljnyihn74"]
 
 [ext_resource type="PackedScene" uid="uid://oqwbubno4dgk" path="res://nodes/player.tscn" id="1_a5650"]
+[ext_resource type="PackedScene" uid="uid://p54poafnfgiw" path="res://nodes/interactible.tscn" id="2_34l7g"]
 
 [node name="DialogTesting" type="Node2D" unique_id=1651422769]
 
 [node name="Player" parent="." unique_id=1211654961 instance=ExtResource("1_a5650")]
 position = Vector2(236, 137)
 
-[node name="NPCDialogArea" type="Area2D" parent="." unique_id=917129144]
+[node name="Interactible" parent="." unique_id=813667143 instance=ExtResource("2_34l7g")]
+position = Vector2(89, 111)

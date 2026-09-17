@@ -10,7 +10,7 @@
 radius = 13.038404
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3jdc4"]
-radius = 44.011364
+radius = 24.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1211654961]
 script = ExtResource("1_bms3g")

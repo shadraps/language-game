@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://p54poafnfgiw"]
+
+[ext_resource type="Script" uid="uid://bvg85k7n4oc32" path="res://scripts/interactions/interactible.gd" id="1_2s01f"]
+[ext_resource type="Theme" uid="uid://dosbj14bvn6jl" path="res://themes/main.tres" id="2_8c4j1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3se44"]
+radius = 8.0
+
+[node name="Interactible" type="Node2D" unique_id=813667143]
+script = ExtResource("1_2s01f")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=736928812]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=641276259]
+shape = SubResource("CircleShape2D_3se44")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=695872997]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=1443621359]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("2_8c4j1")
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer" unique_id=431273165]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("2_8c4j1")
+theme_override_font_sizes/font_size = 21
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

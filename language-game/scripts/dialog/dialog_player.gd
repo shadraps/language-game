@@ -29,6 +29,7 @@ func load_scene_text() -> Dictionary:
 	
 func show_text():
 	dialog.text = selected_text.pop_front()
+	speaker.text = "You:"
 	
 func next_line():
 	if selected_text.size() > 0:
