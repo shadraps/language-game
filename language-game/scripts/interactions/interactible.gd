@@ -15,12 +15,13 @@ func _process(delta: float) -> void:
 	update_display()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print('entered area')
 	enabled = true
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	print('exited area')
 	enabled = false
 	
 func update_display() -> void:
 	panel_container.visible = enabled
+	
+	if enabled:
+		panel_container.offset_transform_position = position
