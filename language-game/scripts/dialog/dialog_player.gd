@@ -6,11 +6,12 @@ var scene_text = {}
 var selected_text = []
 var in_progress = false
 
-@onready var background: TextureRect = $Background
-@onready var text_label: Label = $TextLabel
+@onready var container: PanelContainer = $PanelContainer
+@onready var speaker: Label = $PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Speaker
+@onready var dialog: Label = $PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Dialog
 
 func _ready():
-	background.visible = false
+	container.visible = false
 	scene_text = load_scene_text()
 	SignalBus.connect("display_dialog", on_display_dialog)
 
@@ -27,7 +28,7 @@ func load_scene_text() -> Dictionary:
 		return {}
 	
 func show_text():
-	text_label.text = selected_text.pop_front()
+	dialog.text = selected_text.pop_front()
 	
 func next_line():
 	if selected_text.size() > 0:
@@ -36,8 +37,8 @@ func next_line():
 		finish()
 		
 func finish():
-	text_label.text = ""
-	background.visible = false
+	dialog.text = ""
+	container.visible = false
 	in_progress = false
 	get_tree().paused = false
 	
@@ -46,7 +47,7 @@ func on_display_dialog(text_key):
 		next_line()
 	else:
 		get_tree().paused = true
-		background.visible = true
+		container.visible = true
 		in_progress = true
 		selected_text = scene_text[text_key].duplicate()
 		show_text()

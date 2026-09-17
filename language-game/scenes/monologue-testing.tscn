@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://b0bxdg5i3n0de"]
 
-[ext_resource type="PackedScene" uid="uid://oqwbubno4dgk" path="res://nodes/player.tscn" id="1_hddm4"]
-[ext_resource type="PackedScene" uid="uid://ckfrxcdqf25ja" path="res://nodes/dialog_area.tscn" id="2_qchbg"]
-[ext_resource type="PackedScene" uid="uid://ct21gw2ogrs2b" path="res://nodes/dialog_player.tscn" id="3_kddj0"]
+[ext_resource type="PackedScene" uid="uid://oqwbubno4dgk" path="res://nodes/player.tscn" id="1_wk6l1"]
+[ext_resource type="PackedScene" uid="uid://ckfrxcdqf25ja" path="res://nodes/dialog_area.tscn" id="2_hoom6"]
+[ext_resource type="PackedScene" uid="uid://ct21gw2ogrs2b" path="res://nodes/dialog_player.tscn" id="3_bub0q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qchbg"]
 size = Vector2(32, 32)
 
 [node name="Playground" type="Node2D" unique_id=1981223783]
 
-[node name="CharacterBody2D" parent="." unique_id=1211654961 instance=ExtResource("1_hddm4")]
+[node name="CharacterBody2D" parent="." unique_id=1211654961 instance=ExtResource("1_wk6l1")]
 position = Vector2(245, 139)
 
-[node name="DialogAreaDoor" parent="." unique_id=832969680 instance=ExtResource("2_qchbg")]
+[node name="DialogAreaDoor" parent="." unique_id=832969680 instance=ExtResource("2_hoom6")]
 position = Vector2(5, 0)
 dialog_key = "door"
 
@@ -20,7 +20,7 @@ dialog_key = "door"
 position = Vector2(324, 141)
 shape = SubResource("RectangleShape2D_qchbg")
 
-[node name="DialogAreaBookcase" parent="." unique_id=477665319 instance=ExtResource("2_qchbg")]
+[node name="DialogAreaBookcase" parent="." unique_id=477665319 instance=ExtResource("2_hoom6")]
 position = Vector2(10, 0)
 dialog_key = "bookcase"
 
@@ -28,7 +28,7 @@ dialog_key = "bookcase"
 position = Vector2(236, 213)
 shape = SubResource("RectangleShape2D_qchbg")
 
-[node name="DialogAreaPictures" parent="." unique_id=768549457 instance=ExtResource("2_qchbg")]
+[node name="DialogAreaPictures" parent="." unique_id=768549457 instance=ExtResource("2_hoom6")]
 position = Vector2(20, 0)
 dialog_key = "pictures"
 
@@ -36,8 +36,8 @@ dialog_key = "pictures"
 position = Vector2(140, 144)
 shape = SubResource("RectangleShape2D_qchbg")
 
-[node name="DialogPlayer" parent="." unique_id=1797860898 instance=ExtResource("3_kddj0")]
-scene_text_file = "res://dialog/test_dialog.json"
+[node name="DialogPlayer" parent="." unique_id=1797860898 instance=ExtResource("3_bub0q")]
+scene_text_file = "res://dialog/test_monologue.json"
 
 [editable path="DialogAreaDoor"]
 [editable path="DialogAreaBookcase"]

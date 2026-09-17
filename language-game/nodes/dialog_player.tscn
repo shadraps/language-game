@@ -1,24 +1,41 @@
 [gd_scene format=3 uid="uid://ct21gw2ogrs2b"]
 
 [ext_resource type="Script" uid="uid://bge82p83wh3vh" path="res://scripts/dialog/dialog_player.gd" id="1_pkfvy"]
+[ext_resource type="Theme" uid="uid://dosbj14bvn6jl" path="res://themes/main.tres" id="2_ftycp"]
 
 [node name="DialogPlayer" type="CanvasLayer" unique_id=1797860898]
 script = ExtResource("1_pkfvy")
 
-[node name="Background" type="TextureRect" parent="." unique_id=1314980279]
-offset_left = 122.0
-offset_top = 196.0
-offset_right = 348.0
-offset_bottom = 253.0
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1055129787]
+offset_left = 144.0
+offset_top = 189.0
+offset_right = 336.0
+offset_bottom = 256.5
+theme = ExtResource("2_ftycp")
 
-[node name="TextLabel" type="Label" parent="." unique_id=719694160]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=843725561]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ftycp")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer" unique_id=1299597302]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer" unique_id=1429376698]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Speaker" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=421611533]
+layout_mode = 2
+theme = ExtResource("2_ftycp")
+text = "You"
+
+[node name="Dialog" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1267218360]
 process_mode = 3
-custom_minimum_size = Vector2(200, 50)
-custom_maximum_size = Vector2(200, 50)
-offset_left = 122.0
-offset_top = 196.0
-offset_right = 322.0
-offset_bottom = 246.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("2_ftycp")
+text = "Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
 autowrap_mode = 2
