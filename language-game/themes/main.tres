@@ -1,7 +1,9 @@
 [gd_resource type="Theme" format=4 uid="uid://dosbj14bvn6jl"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3se44"]
-bg_color = Color(0.105882354, 0.101960786, 0.18431373, 1)
+[ext_resource type="StyleBox" uid="uid://n8i7xstifcl5" path="res://themes/button_default.tres" id="1_0avsd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wykhr"]
+bg_color = Color(0.16532087, 0.16006386, 0.27198753, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -2741,7 +2743,8 @@ corner_radius_bottom_left = 10
 
 [resource]
 /colors/background_color = Color(0.298062, 0.14902258, 0.43617344, 1)
-Button/styles/normal = SubResource("StyleBoxFlat_3se44")
+Button/styles/hover = SubResource("StyleBoxFlat_wykhr")
+Button/styles/normal = ExtResource("1_0avsd")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)

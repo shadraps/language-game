@@ -3,9 +3,9 @@ extends CanvasLayer
 
 @export_file var scene_text_file
 
-@onready var container: PanelContainer = $PanelContainer
-@onready var speaker: Label = $PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Speaker
-@onready var dialog: Label = $PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Dialog
+@onready var container: Container = $HBoxContainer
+@onready var speaker: Label = $HBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Speaker
+@onready var dialog: Label = $HBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Dialog
 
 var dialog_data: Dictionary
 
