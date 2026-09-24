@@ -6,32 +6,40 @@
 [node name="DialogPlayer" type="CanvasLayer" unique_id=1797860898]
 script = ExtResource("1_pkfvy")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1055129787]
-offset_left = 144.0
-offset_top = 189.0
-offset_right = 336.0
-offset_bottom = 256.5
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=953655057]
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.7
+anchor_right = 0.85
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=1055129787]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
 theme = ExtResource("2_ftycp")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=843725561]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer" unique_id=843725561]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_ftycp")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer" unique_id=1299597302]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/PanelContainer/MarginContainer" unique_id=1299597302]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer" unique_id=1429376698]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer/ScrollContainer" unique_id=1429376698]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
-[node name="Speaker" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=421611533]
+[node name="Speaker" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=421611533]
 layout_mode = 2
 theme = ExtResource("2_ftycp")
 text = "You:"
 
-[node name="Dialog" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1267218360]
+[node name="Dialog" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1267218360]
 process_mode = 3
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 2
@@ -40,3 +48,31 @@ size_flags_vertical = 1
 theme = ExtResource("2_ftycp")
 text = "Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
 autowrap_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer" unique_id=248544277]
+propagate_maximum_size = true
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer" unique_id=833480927]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ftycp")
+
+[node name="Button" type="Button" parent="HBoxContainer/ScrollContainer/VBoxContainer" unique_id=251421650]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer/Button" unique_id=977678221]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer/Button/MarginContainer" unique_id=1433562594]
+layout_mode = 2
+text = "Example dialog choice"
