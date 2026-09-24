@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ct21gw2ogrs2b"]
 
-[ext_resource type="Script" uid="uid://bge82p83wh3vh" path="res://scripts/dialog/dialog_player.gd" id="1_pkfvy"]
+[ext_resource type="Script" uid="uid://bge82p83wh3vh" path="res://scripts/dialog/dialog_player_old.gd" id="1_pkfvy"]
 [ext_resource type="Theme" uid="uid://dosbj14bvn6jl" path="res://themes/main.tres" id="2_ftycp"]
 
 [node name="DialogPlayer" type="CanvasLayer" unique_id=1797860898]

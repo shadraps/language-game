@@ -1,4 +1,4 @@
-extends Node2D
+class_name Interactible extends Node2D
 
 @onready var area_2d: Area2D = $Area2D
 
@@ -22,7 +22,10 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and enabled:
-		print('interact')
+		_on_interact()
+		
+func _on_interact() -> void:
+	print("Interact not implemented yet")
 	
 func update_display() -> void:
 	panel_container.visible = enabled

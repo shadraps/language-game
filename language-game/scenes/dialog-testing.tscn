@@ -1,12 +1,19 @@
 [gd_scene format=3 uid="uid://bgviljnyihn74"]
 
 [ext_resource type="PackedScene" uid="uid://oqwbubno4dgk" path="res://nodes/player.tscn" id="1_a5650"]
-[ext_resource type="PackedScene" uid="uid://p54poafnfgiw" path="res://nodes/interactible.tscn" id="2_34l7g"]
+[ext_resource type="PackedScene" uid="uid://yy5cpsqmlfj2" path="res://nodes/interactibles/dialog_interactible.tscn" id="1_qhfnd"]
+[ext_resource type="PackedScene" uid="uid://cqhx74teh4ych" path="res://nodes/dialog/dialog_player.tscn" id="3_qhfnd"]
 
 [node name="DialogTesting" type="Node2D" unique_id=1651422769]
+
+[node name="DialogInteractible" parent="." unique_id=813667143 instance=ExtResource("1_qhfnd")]
+position = Vector2(155, 140)
+dialogName = "example1"
 
 [node name="Player" parent="." unique_id=1211654961 instance=ExtResource("1_a5650")]
 position = Vector2(236, 137)
 
-[node name="Interactible" parent="." unique_id=813667143 instance=ExtResource("2_34l7g")]
-position = Vector2(89, 111)
+[node name="DialogPlayer" parent="." unique_id=1797860898 instance=ExtResource("3_qhfnd")]
+scene_text_file = "res://dialog/test_dialog.json"
+
+[connection signal="interacted" from="DialogInteractible" to="DialogPlayer" method="on_interacted"]
