@@ -1,4 +1,17 @@
 {
+	"_comment": [
+		"This object is a dictionary mapping dialog names to dialog 'objects'
+		
+		The structure of one of these dialog 'objects' is intended to be modular, with several stacked on top of one another in as many layers as needed. It follows the following format:
+			{
+				\"speaker\": \"speakerName\" // The name to show for who is saying the message (also will map to image to show)
+				\"message\": \"someMessage\" // The message to display for this dialog 'slide'
+				
+				\"jump\": [dialogName, response1, response2, ...] // Can be empty, can specify just the dialogName to jump to, or can specify a specifc dialog within a dialog to jump to via a series of the names of the responses which lead to that dialog
+				\"responses\": {} // Can be empty. Maps strings (which show as text display of option) to additional dialog objects, which follow the same structure as this one.
+			}"
+	],
+	
 	"example1": {
 		"speaker": "PLAYER",
 		"message": "Who . . . are you?",
