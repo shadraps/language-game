@@ -7,11 +7,11 @@
 [node name="DialogTesting" type="Node2D" unique_id=1651422769]
 
 [node name="DialogInteractible" parent="." unique_id=813667143 instance=ExtResource("1_qhfnd")]
-position = Vector2(155, 140)
+position = Vector2(433, 529)
 dialogName = "example1"
 
 [node name="Player" parent="." unique_id=1211654961 instance=ExtResource("1_a5650")]
-position = Vector2(236, 137)
+position = Vector2(985.99994, 505.99997)
 
 [node name="DialogPlayer" parent="." unique_id=1797860898 instance=ExtResource("3_qhfnd")]
 scene_text_file = "res://dialog/test_dialog.json"

@@ -18,7 +18,7 @@
 		
 		"jump": [],
 		"responses": {
-			"default": {
+			"Continue": {
 				"speaker": "Bill",
 				"message": "I . . . am called Bill. But you may call me Bill.",
 				
@@ -37,7 +37,7 @@
 						
 						"jump": [],
 						"responses": {
-							"default": {
+							"Continue": {
 								"speaker": "JackleBottom",
 								"message": "Oh. Okay.",
 								

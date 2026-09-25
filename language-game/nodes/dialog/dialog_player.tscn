@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cqhx74teh4ych"]
 
 [ext_resource type="Script" uid="uid://bhl2nir6mr22y" path="res://scripts/dialog/dialog_player.gd" id="1_pkfvy"]
-[ext_resource type="Theme" uid="uid://dosbj14bvn6jl" path="res://themes/main.tres" id="2_ftycp"]
+[ext_resource type="Theme" uid="uid://dosbj14bvn6jl" path="res://resources/themes/main.tres" id="2_ftycp"]
 
 [node name="DialogPlayer" type="CanvasLayer" unique_id=1797860898]
 script = ExtResource("1_pkfvy")
@@ -56,23 +56,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer" unique_id=833480927]
+[node name="OptionsContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer" unique_id=833480927]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_ftycp")
 
-[node name="Button" type="Button" parent="HBoxContainer/ScrollContainer/VBoxContainer" unique_id=251421650]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer/Button" unique_id=977678221]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer/Button/MarginContainer" unique_id=1433562594]
+[node name="SampleButton" type="Button" parent="HBoxContainer/ScrollContainer/OptionsContainer" unique_id=251421650]
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 text = "Example dialog choice"

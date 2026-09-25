@@ -1,41 +1,8 @@
 [gd_scene format=3 uid="uid://yy5cpsqmlfj2"]
 
 [ext_resource type="Script" uid="uid://byfdehfdtfquc" path="res://scripts/interactions/dialog_interactible.gd" id="1_masik"]
-[ext_resource type="Theme" uid="uid://dosbj14bvn6jl" path="res://themes/main.tres" id="2_kbqvc"]
+[ext_resource type="PackedScene" uid="uid://p54poafnfgiw" path="res://nodes/interactibles/interactible.tscn" id="1_u7jt8"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3se44"]
-radius = 8.0
-
-[node name="DialogInteractible" type="Node2D" unique_id=813667143]
+[node name="Interactible" unique_id=813667143 instance=ExtResource("1_u7jt8")]
 script = ExtResource("1_masik")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=736928812]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=641276259]
-shape = SubResource("CircleShape2D_3se44")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=695872997]
-
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=1443621359]
-anchors_preset = -1
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-pivot_offset_ratio = Vector2(0.5, 0.5)
-offset_transform_enabled = true
-theme = ExtResource("2_kbqvc")
-
-[node name="Label" type="Label" parent="CanvasLayer/PanelContainer" unique_id=431273165]
-layout_mode = 2
-size_flags_vertical = 1
-theme = ExtResource("2_kbqvc")
-theme_override_font_sizes/font_size = 21
-text = "E"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+dialogName = ""

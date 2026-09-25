@@ -13,6 +13,7 @@ radius = 13.038404
 radius = 24.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1211654961]
+scale = Vector2(5, 5)
 script = ExtResource("1_bms3g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1052077679]
