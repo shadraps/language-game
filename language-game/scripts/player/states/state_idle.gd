@@ -5,8 +5,6 @@ class_name StateIdle extends State
 
 # What happens when player enters this state
 func Enter() -> void:
-	# TODO update animation
-	print("start idle animation")
 	animation_player.play("alien_guy_idle")
 	pass
 	

@@ -8,8 +8,6 @@ class_name StateWalk extends State
 
 # What happens when player enters this state
 func Enter() -> void:
-	# TODO update animation
-	print("start walk animation")
 	animation_player.play("alien_guy_walk")
 	pass
 	
@@ -22,8 +20,6 @@ func Process(_delta: float) -> State:
 		return idle
 		
 	player.velocity = player.direction * move_speed
-	
-	# TODO animation handling?
 	
 	return null
 	
