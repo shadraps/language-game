@@ -1,11 +1,13 @@
 class_name StateIdle extends State
 
 @onready var walk: StateWalk = $"../Walk"
+@onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 
 # What happens when player enters this state
 func Enter() -> void:
 	# TODO update animation
 	print("start idle animation")
+	animation_player.play("alien_guy_idle")
 	pass
 	
 # What happens when player exits this staet
