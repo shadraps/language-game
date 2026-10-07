@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://kt181oaa4jnr" path="res://scripts/player/states/state_walk.gd" id="5_7lbay"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3se44"]
-radius = 13.038404
+radius = 18.217573
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3jdc4"]
 radius = 24.0
@@ -79,6 +79,7 @@ shape = SubResource("CircleShape2D_3se44")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1998450899]
 position = Vector2(0, -4)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_7lbay")
 hframes = 8
 vframes = 2
