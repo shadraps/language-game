@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://oqwbubno4dgk" path="res://nodes/player.tscn" id="1_5hjxr"]
 [ext_resource type="PackedScene" uid="uid://cvpb86u3bbh8y" path="res://nodes/dialog/start_dialog.tscn" id="2_5hjxr"]
+[ext_resource type="PackedScene" uid="uid://dd28c526j41aa" path="res://nodes/map/border_collider.tscn" id="3_dt32y"]
 
 [node name="GameIntro" type="Node2D" unique_id=1760251689]
 
@@ -11,3 +12,5 @@ position = Vector2(957, 526)
 [node name="StartDialog" parent="." unique_id=1563343341 instance=ExtResource("2_5hjxr")]
 prompt_dialog = "Intro"
 dialog_file = "res://dialog/game_intro.json"
+
+[node name="BorderCollider" parent="." unique_id=826314917 instance=ExtResource("3_dt32y")]

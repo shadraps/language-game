@@ -41,6 +41,22 @@
 		"message": "Oh gosh, the flight deck is a mess.",
 		
 		"jump": [],
-		"responses": {}
+		"responses": {
+			"Continue": {
+				"speaker": "You",
+				"message": "Hmm... Yeah, I really don't want to deal with that now.",
+				
+				"jump": [],
+				"responses": {
+					"Continue": {
+						"speaker": "You",
+						"message": "I'll reward myself with a \"break\" for a successful landing, then I'll come back and clean up later. In just 5 minutes. Yup.",
+						
+						"jump": [],
+						"responses": {}
+					}
+				}
+			}
+		}
 	}
 }

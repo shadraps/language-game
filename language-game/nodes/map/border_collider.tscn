@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dd28c526j41aa"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3se44"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dt32y"]
+b = Vector2(0, 2000)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_037n5"]
+b = Vector2(2000, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ouarq"]
+a = Vector2(1920, 0)
+b = Vector2(1920, 2000)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5hjxr"]
+a = Vector2(0, 1080)
+b = Vector2(2000, 1080)
+
+[node name="BorderCollider" type="StaticBody2D" unique_id=826314917]
+physics_material_override = SubResource("PhysicsMaterial_3se44")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1808607089]
+shape = SubResource("SegmentShape2D_dt32y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1394209420]
+shape = SubResource("SegmentShape2D_037n5")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=2054060801]
+shape = SubResource("SegmentShape2D_ouarq")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1739080786]
+shape = SubResource("SegmentShape2D_5hjxr")
