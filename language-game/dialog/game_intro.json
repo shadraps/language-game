@@ -1,33 +1,29 @@
 {
 	"_comment": [
+		"TODO: All Spanish lines in this dialogue are currently generated with AI and need verification/modification/QA by native speakers.",
 		"This object is a dictionary mapping dialog names to dialog 'objects'
 		
-		The structure of one of these dialog 'objects' is intended to be modular, with several stacked on top of one another in as many layers as needed. It follows the following format:
-			{
+		The structure of one of these dialog 'objects' is intended to be modular, with several stacked on top of one another in as many layers as needed. It follows the following format: {
 				\"speaker\": \"speakerName\" // The name to show for who is saying the message (also will map to image to show)
 				\"message\": \"someMessage\" // The message to display for this dialog 'slide'
 				
 				\"jump\": [dialogName, response1, response2, ...] // Can be empty, can specify just the dialogName to jump to, or can specify a specifc dialog within a dialog to jump to via a series of the names of the responses which lead to that dialog
 				\"responses\": {} // Can be empty. Maps strings (which show as text display of option) to additional dialog objects, which follow the same structure as this one.
-			}"
+		}"
 	],
-	
 	"Intro": {
 		"speaker": "You",
 		"message": "Oops. Might have taken that landing with a little too much gusto…",
-		
 		"jump": [],
 		"responses": {
 			"Continue": {
 				"speaker": "You",
-				"message": "Think I landed on a planet called… Tierra?",
-				
+				"message": "Think I landed on a planet called... Tierra? That's the right one, right?",
 				"jump": [],
 				"responses": {
 					"Continue": {
 						"speaker": "You",
 						"message": "*Checks engine light*",
-						
 						"jump": ["Engine Check"],
 						"responses": {}
 					}
@@ -35,23 +31,148 @@
 			}
 		}
 	},
-	
 	"Engine Check": {
 		"speaker": "You",
 		"message": "Oh gosh, the flight deck is a mess.",
-		
 		"jump": [],
 		"responses": {
 			"Continue": {
 				"speaker": "You",
 				"message": "Hmm... Yeah, I really don't want to deal with that now.",
-				
 				"jump": [],
 				"responses": {
 					"Continue": {
 						"speaker": "You",
 						"message": "I'll reward myself with a \"break\" for a successful landing, then I'll come back and clean up later. In just 5 minutes. Yup.",
-						
+						"jump": ["Supplies Check"],
+						"responses": {}
+					}
+				}
+			}
+		}
+	},
+	"Supplies Check": {
+		"speaker": "You",
+		"message": "Fortunately, I do have some supplies on hand.",
+		"jump": [],
+		"responses": {
+			"Continue": {
+				"speaker": "You",
+				"message": "Some local money, some snazzy clothes to blend in, and my handy dandy L.E.X.I. intergalactic translating device... which, is cracked. Shoot.",
+				"jump": [],
+				"responses": {
+					"Continue": {
+						"speaker": "You",
+						"message": "It must have been damaged in the crash . . . I really hope that doesn't cause problems.",
+						"jump": [],
+						"responses": {
+							"Continue": {
+								"speaker": "You",
+								"message": "I'm kinda hungry. Should I get take out or something from the fridge? Wait, my fridge is broken too . . .",
+								"jump": [],
+								"responses": {
+									"Continue": {
+										"speaker": "You",
+										"message": "I guess I'll go see what the city has to offer for food.",
+										"jump": ["Wizard Invasion"],
+										"responses": {}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"Wizard Invasion": {
+		"speaker": "You",
+		"message": "Huh, what's that?",
+		"jump": [],
+		"responses": {
+			"Continue": {
+				"speaker": "Strange Old Man",
+				"message": "¡Muajajajá! ¡Mi plan para **open** un restaurante de **chicken** está **going** a la perfección!",
+				"jump": [],
+				"responses": {
+					"What's happening?!": {
+						"speaker": "You",
+						"message": "What in the galaxy? What's happening to everyone? Who are you?!",
+						"jump": [],
+						"responses": {
+							"Continue": {
+								"speaker": "Strange Old Man",
+								"message": "**I have** muchos nombres, pero tú… ¡puedes **call me** el Viejo Mago Chiflado!",
+								"jump": [],
+								"responses": {
+									"Continue": {
+										"speaker": "You",
+										"message": "Man, I really need to fix this translation device. I guess his name is Viejo Mago Chiflado? I wonder what that means.",
+										"jump": [],
+										"responses": {
+											"Continue": {
+												"speaker": "Viejo Mago Chiflado",
+												"message": "¡Muajajajá!",
+												"jump": ["Townspeople's Cries"],
+												"responses": {}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"Townspeople's Cries": {
+		"speaker": "Young Man",
+		"message": "¡Ay, no! ¡Me **became** en un nugget de **chicken**!",
+		"jump": [],
+		"responses": {
+			"Continue": {
+				"speaker": "Old Lady",
+				"message": "¿Cómo me **could** pasar esto?",
+				"jump": [],
+				"responses": {
+					"Continue": {
+						"speaker": "Young Mom",
+						"message": "¿Y **now** qué voy a **do**? ¡Todo se **ended**!",
+						"jump": [],
+						"responses": {
+							"Continue": {
+								"speaker": "Little Girl",
+								"message": "Me **wonder** si **there'll be** algún **alien** cerca que sea **immune** al Chickenator 5000 y pueda **help us**...",
+								"jump": [],
+								"responses": {
+									"Continue": {
+										"speaker": "Little Boy",
+										"message": "¡**If only** hubiera un **alien** por aquí **right now**, en un momento tan **convenient**!",
+										"jump": ["Post-Disaster Monologue"],
+										"responses": {}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"Post-Disaster Monologue": {
+		"speaker": "You",
+		"message": "I've gotta do something to help them!",
+		"jump": [],
+		"responses": {
+			"Continue": {
+				"speaker": "You",
+				"message": "For some reason, it seems like the Chickenator 5000 didn't have any effect on me.",
+				"jump": [],
+				"responses": {
+					"Continue": {
+						"speaker": "You",
+						"message": "Maybe I can start by talking to this chicken nugget... I mean old lady who became a chicken nugget.",
 						"jump": [],
 						"responses": {}
 					}
