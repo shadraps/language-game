@@ -92,7 +92,7 @@
 		"responses": {
 			"Continue": {
 				"speaker": "Strange Old Man",
-				"message": "¡Muajajajá! ¡Mi plan para **open** un restaurante de **chicken** está **going** a la perfección!",
+				"message": "¡Muajajajá! ¡Mi plan para [color=red]open[/color] un restaurante de [color=red]chicken[/color] está [color=red]going[/color] a la perfección!",
 				"jump": [],
 				"responses": {
 					"What's happening?!": {
@@ -102,7 +102,7 @@
 						"responses": {
 							"Continue": {
 								"speaker": "Strange Old Man",
-								"message": "**I have** muchos nombres, pero tú… ¡puedes **call me** el Viejo Mago Chiflado!",
+								"message": "[color=red]I have[/color] muchos nombres, pero tú… ¡puedes [color=red]call me[/color] el Viejo Mago Chiflado!",
 								"jump": [],
 								"responses": {
 									"Continue": {
@@ -128,27 +128,27 @@
 	},
 	"Townspeople's Cries": {
 		"speaker": "Young Man",
-		"message": "¡Ay, no! ¡Me **became** en un nugget de **chicken**!",
+		"message": "¡Ay, no! ¡Me [color=red]became[/color] en un nugget de [color=red]chicken[/color]!",
 		"jump": [],
 		"responses": {
 			"Continue": {
 				"speaker": "Old Lady",
-				"message": "¿Cómo me **could** pasar esto?",
+				"message": "¿Cómo me [color=red]could[/color] pasar esto?",
 				"jump": [],
 				"responses": {
 					"Continue": {
 						"speaker": "Young Mom",
-						"message": "¿Y **now** qué voy a **do**? ¡Todo se **ended**!",
+						"message": "¿Y [color=red]now[/color] qué voy a [color=red]do[/color]? ¡Todo se [color=red]ended[/color]!",
 						"jump": [],
 						"responses": {
 							"Continue": {
 								"speaker": "Little Girl",
-								"message": "Me **wonder** si **there'll be** algún **alien** cerca que sea **immune** al Chickenator 5000 y pueda **help us**...",
+								"message": "Me [color=red]wonder[/color] si [color=red]there'll be[/color] algún [color=red]alien[/color] cerca que sea [color=red]immune[/color] al Chickenator 5000 y pueda [color=red]help us[/color]...",
 								"jump": [],
 								"responses": {
 									"Continue": {
 										"speaker": "Little Boy",
-										"message": "¡**If only** hubiera un **alien** por aquí **right now**, en un momento tan **convenient**!",
+										"message": "¡[color=red]If only[/color] hubiera un [color=red]alien[/color] por aquí [color=red]right now[/color], en un momento tan [color=red]convenient[/color]!",
 										"jump": ["Post-Disaster Monologue"],
 										"responses": {}
 									}

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bhl2nir6mr22y" path="res://scripts/dialog/dialog_player.gd" id="1_pkfvy"]
 [ext_resource type="Theme" uid="uid://dosbj14bvn6jl" path="res://resources/themes/main.tres" id="2_ftycp"]
 
+[sub_resource type="Theme" id="Theme_3se44"]
+
 [node name="DialogPlayer" type="CanvasLayer" unique_id=1797860898]
 script = ExtResource("1_pkfvy")
 
@@ -33,21 +35,21 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+theme = ExtResource("2_ftycp")
 
 [node name="Speaker" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=421611533]
 layout_mode = 2
 theme = ExtResource("2_ftycp")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
 text = "You:"
 
-[node name="Dialog" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1267218360]
-process_mode = 3
-custom_minimum_size = Vector2(5, 5)
+[node name="Dialog" type="RichTextLabel" parent="HBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1709950768]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme = ExtResource("2_ftycp")
-text = "Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
-autowrap_mode = 2
+theme = SubResource("Theme_3se44")
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet lorem [color=red]ipsum[/color] dolor sit amet lorem ipsum dolor sit amet"
+fit_content = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer" unique_id=248544277]
 propagate_maximum_size = true
