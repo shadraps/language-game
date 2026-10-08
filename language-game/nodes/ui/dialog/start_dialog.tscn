@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cvpb86u3bbh8y"]
 
 [ext_resource type="Script" uid="uid://d03t1tha3vbal" path="res://scripts/dialog/start_dialog.gd" id="1_7ly46"]
-[ext_resource type="PackedScene" uid="uid://cqhx74teh4ych" path="res://nodes/dialog/dialog_player.tscn" id="2_pp6p4"]
+[ext_resource type="PackedScene" uid="uid://cqhx74teh4ych" path="res://nodes/ui/dialog/dialog_player.tscn" id="2_pp6p4"]
 
 [node name="StartDialog" type="Node" unique_id=1563343341]
 script = ExtResource("1_7ly46")

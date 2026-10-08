@@ -138,7 +138,7 @@
 				"responses": {
 					"Continue": {
 						"speaker": "Young Mom",
-						"message": "¿Y [color=red]now[/color] qué voy a [color=red]do[/color]? ¡Todo se [color=red]ended[/color]!",
+						"message": "¿Y [color=red]now[/color] qué voy a [color=red]do[/color]? ¡Todo se [color=red]over[/color]!",
 						"jump": [],
 						"responses": {
 							"Continue": {
