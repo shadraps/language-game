@@ -1,15 +1,65 @@
 [gd_scene format=3 uid="uid://c3bkm1fvfg5ah"]
 
+[ext_resource type="Theme" uid="uid://dosbj14bvn6jl" path="res://resources/themes/main.tres" id="1_fuku2"]
+
+[sub_resource type="Theme" id="Theme_3se44"]
+
 [node name="LEXI" type="CanvasLayer" unique_id=453999833]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=428287808]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=478123729]
 anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -20.0
-offset_bottom = 20.0
-grow_horizontal = 0
-grow_vertical = 2
+anchor_left = 0.2
+anchor_top = 0.1
+anchor_right = 0.8
+anchor_bottom = 0.65
+theme = ExtResource("1_fuku2")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1266989787]
+layout_mode = 2
+theme = SubResource("Theme_3se44")
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=428287808]
+layout_mode = 2
+
+[node name="Navigation" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2041255107]
+layout_mode = 2
+
+[node name="SearchText" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/Navigation" unique_id=725269706]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+placeholder_text = "Search words in either English or Spanish"
+
+[node name="SearchButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Navigation" unique_id=1370928117]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Search"
+
+[node name="MainContent" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1403570347]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WordListScroll" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent" unique_id=1223671075]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WordList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/WordListScroll" unique_id=1804057197]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DetailsScroll" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent" unique_id=132815717]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Details" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll" unique_id=1469991735]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
