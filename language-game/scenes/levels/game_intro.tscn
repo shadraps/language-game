@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://oqwbubno4dgk" path="res://nodes/player.tscn" id="1_5hjxr"]
 [ext_resource type="PackedScene" uid="uid://cvpb86u3bbh8y" path="res://nodes/dialog/start_dialog.tscn" id="2_5hjxr"]
-[ext_resource type="PackedScene" uid="uid://dd28c526j41aa" path="res://nodes/map/border_collider.tscn" id="3_dt32y"]
 [ext_resource type="PackedScene" uid="uid://borfgbl51mfw8" path="res://outside the ship.tscn" id="4_037n5"]
 
 [node name="GameIntro" type="Node2D" unique_id=1760251689]
@@ -11,14 +10,16 @@
 prompt_dialog = "Intro"
 dialog_file = "res://dialog/game_intro.json"
 
-[node name="BorderCollider" parent="." unique_id=826314917 instance=ExtResource("3_dt32y")]
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=351536427]
-
 [node name="Grass" parent="." unique_id=1787902010 instance=ExtResource("4_037n5")]
+position = Vector2(0.00024414063, 0.00018310547)
+scale = Vector2(2, 2)
 
-[node name="Player" parent="Grass" unique_id=1211654961 instance=ExtResource("1_5hjxr")]
+[node name="Player" parent="." unique_id=1211654961 instance=ExtResource("1_5hjxr")]
 position = Vector2(951.00006, 579.00006)
 
-[node name="Camera2D" type="Camera2D" parent="Grass/Player" unique_id=684514103]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=684514103]
 position = Vector2(-0.19999695, 0)
+
+[node name="Trees" type="TileMapLayer" parent="." unique_id=351536427]
+z_index = 5
+scale = Vector2(2, 2)
