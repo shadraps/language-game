@@ -71,6 +71,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=1211654961]
+position = Vector2(926.99994, 753.99994)
 scale = Vector2(5, 5)
 script = ExtResource("1_bms3g")
 
@@ -98,6 +99,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogInteractionArea" unique_id=1469046173]
+position = Vector2(-0.39999998, -2.1999998)
 shape = SubResource("CircleShape2D_3jdc4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1047494461]
