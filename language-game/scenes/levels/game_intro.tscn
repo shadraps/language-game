@@ -21,3 +21,4 @@ dialog_file = "res://dialog/game_intro.json"
 position = Vector2(951.00006, 579.00006)
 
 [node name="Camera2D" type="Camera2D" parent="Grass/Player" unique_id=684514103]
+position = Vector2(-0.19999695, 0)
