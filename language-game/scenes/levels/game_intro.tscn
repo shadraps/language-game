@@ -10,16 +10,11 @@
 prompt_dialog = "Intro"
 dialog_file = "res://dialog/game_intro.json"
 
-[node name="Grass" parent="." unique_id=1787902010 instance=ExtResource("4_037n5")]
-position = Vector2(0.00024414063, 0.00018310547)
-scale = Vector2(2, 2)
+[node name="Natural World" parent="." unique_id=1787902010 instance=ExtResource("4_037n5")]
 
 [node name="Player" parent="." unique_id=1211654961 instance=ExtResource("1_5hjxr")]
-position = Vector2(951.00006, 579.00006)
+position = Vector2(952.00006, 580.00006)
+scale = Vector2(2.4650867, 2.6816692)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=684514103]
 position = Vector2(-0.19999695, 0)
-
-[node name="Trees" type="TileMapLayer" parent="." unique_id=351536427]
-z_index = 5
-scale = Vector2(2, 2)
