@@ -11,6 +11,7 @@ prompt_dialog = "Intro"
 dialog_file = "res://dialog/game_intro.json"
 
 [node name="Tilemap" parent="." unique_id=835511656 instance=ExtResource("2_fthwo")]
+position = Vector2(-513, -230)
 
 [node name="Player" parent="." unique_id=1211654961 instance=ExtResource("3_ldcya")]
 position = Vector2(952.00006, 580.00006)
@@ -19,3 +20,8 @@ scale = Vector2(2.4650867, 2.6816692)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=684514103]
 position = Vector2(-0.19998169, 0)
 scale = Vector2(1, 1.0000001)
+zoom = Vector2(2, 2)
+limit_left = -80
+limit_top = -13
+limit_right = 732
+limit_bottom = 494
