@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://2poabspybyjh"]
+
+[ext_resource type="PackedScene" uid="uid://cvpb86u3bbh8y" path="res://nodes/dialog/start_dialog.tscn" id="1_ba77c"]
+[ext_resource type="PackedScene" uid="uid://b43mb7i5pbvdb" path="res://scenes/level_designs/spaceship.tscn" id="2_fthwo"]
+[ext_resource type="PackedScene" uid="uid://oqwbubno4dgk" path="res://nodes/player.tscn" id="3_ldcya"]
+
+[node name="GameIntro" type="Node2D" unique_id=1760251689]
+
+[node name="StartDialog" parent="." unique_id=1563343341 instance=ExtResource("1_ba77c")]
+prompt_dialog = "Intro"
+dialog_file = "res://dialog/game_intro.json"
+
+[node name="Tilemap" parent="." unique_id=835511656 instance=ExtResource("2_fthwo")]
+
+[node name="Player" parent="." unique_id=1211654961 instance=ExtResource("3_ldcya")]
+position = Vector2(952.00006, 580.00006)
+scale = Vector2(2.4650867, 2.6816692)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=684514103]
+position = Vector2(-0.19998169, 0)
+scale = Vector2(1, 1.0000001)
