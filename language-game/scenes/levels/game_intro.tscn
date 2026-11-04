@@ -17,3 +17,4 @@ dialog_file = "res://dialog/game_intro.json"
 [node name="BorderCollider" parent="." unique_id=826314917 instance=ExtResource("3_dt32y")]
 
 [node name="LEXI" parent="." unique_id=453999833 instance=ExtResource("4_037n5")]
+vocab_list_file = "res://dictionary/example_vocab_list.json"

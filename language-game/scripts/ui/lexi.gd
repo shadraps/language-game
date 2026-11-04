@@ -1,8 +1,17 @@
 class_name LEXI extends CanvasLayer
 
+## EXPORTS ##
+
+@export_file var vocab_list_file
+
 ## CONSTANTS ##
 
-const DEBUG := true
+const DEBUG := false
+
+## OTHER VARIABLES ##
+
+var vocab_list: Array
+var vocab_defs: Dictionary
 
 ## BUILTIN METHODS ##
 
@@ -11,11 +20,14 @@ func _ready() -> void:
 	if DEBUG:
 		var result1 = await look_up("playa")
 		var result2 = await look_up("yay")
-		var result3 = await look_up("biblioteca")
+		var result3 = await look_up("playat")
 		
 		_dprint("playa: ", result1)
 		_dprint("yay: ", result2)
-		_dprint("biblioteca: ", result3)
+		_dprint("playat: ", result3)
+		
+	# Initializing vocabulary list
+	_initialize_vocabulary()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -74,6 +86,31 @@ func look_up(word: String) -> Variant:
 	return data
 	
 ## PRIVATE HELPER METHODS ##
+
+func _initialize_vocabulary():
+	# getting vocab list as array
+	vocab_list = _load_vocab_list()
+	_dprint("Registered vocab list: ", vocab_list)
+	
+	# looking up and verifying individual words in vocab list
+	for word in vocab_list:
+		_dprint("Validating word %s" % word)
+		var data = await look_up(word)
+		if data is String:
+			push_error("The word %s was not able to be validated. Response: ", data)
+		
+
+func _load_vocab_list() -> Array:
+	var file = FileAccess.open(vocab_list_file, FileAccess.READ)
+	var content = file.get_as_text()
+	
+	var json = JSON.new()
+	var error = json.parse(content)
+	if error == OK:
+		return json.data
+	else:
+		print("JSON Parse Error: ", json.get_error_message())
+		return []
 
 func _dprint(...args: Array) -> void:
 	if DEBUG:
