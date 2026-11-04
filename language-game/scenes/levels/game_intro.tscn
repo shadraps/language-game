@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dd28c526j41aa" path="res://nodes/map/border_collider.tscn" id="3_dt32y"]
 [ext_resource type="PackedScene" uid="uid://c3bkm1fvfg5ah" path="res://nodes/ui/lexi/lexi.tscn" id="4_037n5"]
 
-[node name="GameIntro" type="Node2D" unique_id=1760251689]
+[node name="GameIntro2" type="Node2D" unique_id=1760251689]
 
 [node name="Player" parent="." unique_id=1211654961 instance=ExtResource("1_5hjxr")]
 position = Vector2(957, 526)
