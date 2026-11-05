@@ -10,7 +10,7 @@ const DEBUG := true
 
 const WORD_BUTTON = preload("uid://dfaw4n3nrv3r1")
 
-const BUTTON_SELECTED = Color("#e6b84a")
+const BUTTON_SELECTED_BORDER = Color("b38100ff")
 
 ## OTHER VARIABLES ##
 
@@ -64,10 +64,11 @@ func update_display() -> void:
 		button.text = word
 		
 		# coloring button
-		var style := button.get_theme_stylebox("normal").duplicate() as StyleBoxFlat
+		var source := preload("uid://n1yq1a33u8bh")
+		var style := source.duplicate() as StyleBoxFlat
 		if button.text == _selected_word:
-			style.bg_color = BUTTON_SELECTED
-		button.add_theme_stylebox_override("normal", style)
+			style.border_color = BUTTON_SELECTED_BORDER
+			button.add_theme_stylebox_override("normal", style)
 		
 		# finalizing button
 		button.pressed.connect(_on_word_button_pressed.bind(word))
