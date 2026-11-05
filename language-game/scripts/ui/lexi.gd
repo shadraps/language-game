@@ -10,7 +10,7 @@ const DEBUG := true
 
 const WORD_BUTTON = preload("uid://dfaw4n3nrv3r1")
 
-const BUTTON_SELECTED_BORDER = Color("b38100ff")
+const BUTTON_SELECTED_BORDER = Color("c631ffff")
 
 ## OTHER VARIABLES ##
 
@@ -58,6 +58,7 @@ func update_display() -> void:
 	for word_button in word_list.get_children():
 		word_button.queue_free()
 	
+	# adding new vocab words
 	for word in vocab_list:
 		# instantiating button
 		var button: Button = WORD_BUTTON.instantiate()
@@ -69,10 +70,14 @@ func update_display() -> void:
 		if button.text == _selected_word:
 			style.border_color = BUTTON_SELECTED_BORDER
 			button.add_theme_stylebox_override("normal", style)
+			button.add_theme_stylebox_override("hover", style)
 		
 		# finalizing button
 		button.pressed.connect(_on_word_button_pressed.bind(word))
 		word_list.add_child(button)
+		
+	# updating description
+	
 
 # Looking up words
 func look_up(word: String) -> Variant:
