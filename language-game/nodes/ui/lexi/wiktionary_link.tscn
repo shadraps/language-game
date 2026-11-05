@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bfn83dq5ipflj"]
+
+[ext_resource type="Theme" uid="uid://dosbj14bvn6jl" path="res://resources/themes/main.tres" id="1_6j2mg"]
+
+[node name="WiktionaryLink" type="RichTextLabel" unique_id=1475908266]
+size_flags_vertical = 3
+theme = ExtResource("1_6j2mg")
+bbcode_enabled = true
+text = "[color=#9999ff][u]https://en.wiktionary.org/wiki/año[/u][/color]"
+fit_content = true
+scroll_active = false

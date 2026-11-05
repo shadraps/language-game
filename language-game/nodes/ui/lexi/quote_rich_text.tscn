@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bnmdvkvn773m1"]
+
+[node name="QuoteRichText" type="RichTextLabel" unique_id=563715536]
+bbcode_enabled = true
+text = "\"Afirmaréis seguros que es la capital de España / Pero al llegar agosto, ¡vaya, vaya! / Aquí no hay playa\"
+[color=#aaffaa]- 1989, “Aquí no hay playa”, performed by The Refrescos:[/color]"
+fit_content = true

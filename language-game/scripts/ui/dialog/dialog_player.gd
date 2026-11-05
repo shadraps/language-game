@@ -5,7 +5,7 @@ class_name DialogPlayer extends CanvasLayer
 
 @onready var container: Container = $HBoxContainer
 @onready var speaker: Label = $HBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Speaker
-@onready var dialog: Label = $HBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Dialog
+@onready var dialog: RichTextLabel = $HBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Dialog
 
 @onready var options_container: VBoxContainer = $HBoxContainer/ScrollContainer/OptionsContainer
 @onready var sample_button: Button = $HBoxContainer/ScrollContainer/OptionsContainer/SampleButton

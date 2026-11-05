@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dfaw4n3nrv3r1"]
+
+[ext_resource type="Theme" uid="uid://dosbj14bvn6jl" path="res://resources/themes/main.tres" id="1_46sh1"]
+
+[node name="Word" type="Button" unique_id=2008645173]
+theme = ExtResource("1_46sh1")
+text = "playa"
