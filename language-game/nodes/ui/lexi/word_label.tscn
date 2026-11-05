@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://btsrlavrw467n"]
+
+[ext_resource type="Theme" uid="uid://dosbj14bvn6jl" path="res://resources/themes/main.tres" id="1_m881a"]
+
+[node name="WordLabel" type="Label" unique_id=1959012017]
+theme = ExtResource("1_m881a")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "playa"

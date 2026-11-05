@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://6y86dvm17eg6"]
+
+[node name="CreditsLabel" type="Label" unique_id=1859677390]
+custom_minimum_size = Vector2(5, 5)
+text = "Provided by Wiktionary via FreeDictionaryAPI.com"
+autowrap_mode = 3

@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bwou1av7yxx3h" path="res://scripts/ui/lexi.gd" id="1_fs0np"]
 [ext_resource type="Theme" uid="uid://dosbj14bvn6jl" path="res://resources/themes/main.tres" id="1_fuku2"]
+[ext_resource type="PackedScene" uid="uid://btsrlavrw467n" path="res://nodes/ui/lexi/word_label.tscn" id="3_qvqxd"]
 [ext_resource type="PackedScene" uid="uid://bas2ay2m4v5tm" path="res://nodes/ui/lexi/horizontal_line.tscn" id="3_yoh68"]
 [ext_resource type="PackedScene" uid="uid://c0ef17sb7uipi" path="res://nodes/ui/lexi/word_entry.tscn" id="4_cjnww"]
+[ext_resource type="PackedScene" uid="uid://6y86dvm17eg6" path="res://nodes/ui/lexi/credits_label.tscn" id="6_ario6"]
+[ext_resource type="PackedScene" uid="uid://bfn83dq5ipflj" path="res://nodes/ui/lexi/wiktionary_link.tscn" id="6_eclmn"]
 
 [sub_resource type="Theme" id="Theme_3se44"]
 
@@ -63,21 +66,25 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="Details" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll" unique_id=1469991735]
+[node name="DetailsVBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll" unique_id=1469991735]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="WordLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details" unique_id=294633358]
-layout_mode = 2
-theme = ExtResource("1_fuku2")
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_font_sizes/font_size = 35
-text = "playa"
-
-[node name="HorizontalLine" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details" unique_id=806251494 instance=ExtResource("3_yoh68")]
+[node name="WordLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox" unique_id=1959012017 instance=ExtResource("3_qvqxd")]
 layout_mode = 2
 
-[node name="WordEntry" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details" unique_id=1010648846 instance=ExtResource("4_cjnww")]
+[node name="HorizontalLine" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox" unique_id=806251494 instance=ExtResource("3_yoh68")]
 layout_mode = 2
+
+[node name="WordEntry" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox" unique_id=1010648846 instance=ExtResource("4_cjnww")]
+layout_mode = 2
+
+[node name="CreditsLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox" unique_id=1859677390 instance=ExtResource("6_ario6")]
+layout_mode = 2
+
+[node name="WiktionaryLink" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox" unique_id=1475908266 instance=ExtResource("6_eclmn")]
+layout_mode = 2
+
+[editable path="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox/WordEntry"]

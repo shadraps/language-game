@@ -78,6 +78,7 @@ MarginContainer/constants/margin_top = 20
 PanelContainer/styles/panel = ExtResource("2_lhqq7")
 RichTextLabel/constants/line_separation = 12
 RichTextLabel/constants/paragraph_separation = 16
+RichTextLabel/constants/underline_alpha = 100
 RichTextLabel/font_sizes/bold_font_size = 25
 RichTextLabel/font_sizes/bold_italics_font_size = 25
 RichTextLabel/font_sizes/italics_font_size = 25

@@ -8,15 +8,23 @@ class_name LEXI extends CanvasLayer
 
 const DEBUG := true
 
-const WORD_BUTTON = preload("uid://dfaw4n3nrv3r1")
-
 const BUTTON_SELECTED_BORDER = Color("c631ffff")
 
 ## OTHER VARIABLES ##
 
 # gui variables
 @onready var word_list: VBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/MainContent/WordListScroll/WordList
-@onready var details: VBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details
+@onready var details_v_box: VBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox
+
+const DEFINITION_V_BOX = preload("uid://pi7g371u8f52")
+const HORIZONTAL_LINE = preload("uid://bas2ay2m4v5tm")
+const QUOTE_RICH_TEXT = preload("uid://bnmdvkvn773m1")
+const SPACER = preload("uid://5vmdlnf70lrg")
+const WORD_BUTTON = preload("uid://dfaw4n3nrv3r1")
+const WORD_ENTRY = preload("uid://c0ef17sb7uipi")
+const WORD_LABEL = preload("uid://btsrlavrw467n")
+const WIKTIONARY_LINK = preload("uid://bfn83dq5ipflj")
+const CREDITS_LABEL = preload("uid://6y86dvm17eg6")
 
 # data variables
 var vocab_list: Array
@@ -43,7 +51,7 @@ func _ready() -> void:
 		_dprint("playat: ", result3)
 		
 	# Initializing vocabulary list
-	_initialize_vocabulary()
+	await _initialize_vocabulary()
 	update_display()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -76,8 +84,69 @@ func update_display() -> void:
 		button.pressed.connect(_on_word_button_pressed.bind(word))
 		word_list.add_child(button)
 		
-	# updating description
+	# clearing previous description
+	for child in details_v_box.get_children():
+		child.queue_free()
 	
+	# adding new description
+	_dprint("Checking selected word: %s" % _selected_word)
+	if _selected_word != "":
+		# page title & word
+		var word = _selected_word
+		var word_label = WORD_LABEL.instantiate()
+		word_label.text = word
+		details_v_box.add_child(word_label)
+		
+		# adding entries
+		var data = vocab_defs[word]
+		for entry in data.entries:
+			# data variables
+			var senses = entry.senses
+			var pronunciations = entry.pronunciations
+			var forms = entry.forms
+			
+			# creating entry UI
+			var line_panel = HORIZONTAL_LINE.instantiate()
+			var entry_vbox = WORD_ENTRY.instantiate()
+			
+			# adding new definitions
+			for sense in senses:
+				var def_v_box = DEFINITION_V_BOX.instantiate()
+				var extra = ", ".join(sense.tags)
+				extra = ", " + extra if extra != "" else extra
+				def_v_box.find_child("Details").text = entry.partOfSpeech + extra
+				def_v_box.find_child("EnglishGloss").text = sense.definition
+				entry_vbox.find_child("Definitions").add_child(def_v_box)
+				
+			# adding pronunciations
+			var ipa_label = entry_vbox.find_child("IPAPronunciation")
+			var ipa_texts: Array[String] = []
+			for pronunciation in pronunciations:
+				ipa_texts.append(pronunciation.text)
+			ipa_label.text = ", ".join(ipa_texts)
+			
+			# adding other forms
+			var forms_label = entry_vbox.find_child("OtherForms")
+			var forms_text_lines: Array[String] = []
+			for form in forms:
+				forms_text_lines.append("- %s: " % form.word + ", ".join(form.tags))
+			forms_label.text = "\n".join(forms_text_lines)
+			forms_label.visible = false if forms_label.text == "" else true
+			
+			# adding entry
+			details_v_box.add_child(line_panel)
+			details_v_box.add_child(entry_vbox)
+			
+		# adding credits
+		var bottom_line = HORIZONTAL_LINE.instantiate()
+		details_v_box.add_child(bottom_line)
+		
+		var wiktionary_link = WIKTIONARY_LINK.instantiate()
+		wiktionary_link.text = "[color=#9999ff][url=%s]%s[/url][/color]" % [data.source.url, data.source.url]
+		details_v_box.add_child(wiktionary_link)
+		
+		var credits_label = CREDITS_LABEL.instantiate()
+		details_v_box.add_child(credits_label)
 
 # Looking up words
 func look_up(word: String) -> Variant:
@@ -164,7 +233,7 @@ func _initialize_one_word(word: String):
 	
 	# checking for error message
 	if data is String:
-		push_error("The word %s was not able to be validated. Response: ", data)
+		push_error("The word %s was not able to be validated. Response: " % word, data)
 	
 	# adding data and definition entries
 	vocab_defs[word] = data

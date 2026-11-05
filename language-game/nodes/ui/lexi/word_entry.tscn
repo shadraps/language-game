@@ -1,16 +1,11 @@
 [gd_scene format=3 uid="uid://c0ef17sb7uipi"]
 
-[ext_resource type="PackedScene" uid="uid://pi7g371u8f52" path="res://nodes/ui/lexi/definition_v_box.tscn" id="1_ev2a4"]
 [ext_resource type="PackedScene" uid="uid://5vmdlnf70lrg" path="res://nodes/ui/lexi/spacer.tscn" id="2_8pp6l"]
 [ext_resource type="Theme" uid="uid://dosbj14bvn6jl" path="res://resources/themes/main.tres" id="3_bvj63"]
-[ext_resource type="PackedScene" uid="uid://bnmdvkvn773m1" path="res://nodes/ui/lexi/quote_rich_text.tscn" id="4_2pgw3"]
 
 [node name="WordEntry" type="VBoxContainer" unique_id=1010648846]
 
 [node name="Definitions" type="VBoxContainer" parent="." unique_id=93470595]
-layout_mode = 2
-
-[node name="DefinitionVBox" parent="Definitions" unique_id=529972786 instance=ExtResource("1_ev2a4")]
 layout_mode = 2
 
 [node name="Spacer" parent="." unique_id=926992628 instance=ExtResource("2_8pp6l")]
@@ -27,10 +22,12 @@ autowrap_mode = 3
 layout_mode = 2
 
 [node name="OtherForms" type="Label" parent="." unique_id=140364406]
+custom_minimum_size = Vector2(5, 5)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.7347105, 0.7895559, 1)
 text = "- playas: plural
 - plasha: alternative"
+autowrap_mode = 3
 
 [node name="Spacer3" parent="." unique_id=1031177590 instance=ExtResource("2_8pp6l")]
 layout_mode = 2
@@ -39,6 +36,3 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("3_bvj63")
 theme_override_constants/separation = 20
-
-[node name="QuoteRichText" parent="Quotes" unique_id=563715536 instance=ExtResource("4_2pgw3")]
-layout_mode = 2
