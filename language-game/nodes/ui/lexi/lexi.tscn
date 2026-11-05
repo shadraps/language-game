@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bwou1av7yxx3h" path="res://scripts/ui/lexi.gd" id="1_fs0np"]
 [ext_resource type="Theme" uid="uid://dosbj14bvn6jl" path="res://resources/themes/main.tres" id="1_fuku2"]
+[ext_resource type="PackedScene" uid="uid://bas2ay2m4v5tm" path="res://nodes/ui/lexi/horizontal_line.tscn" id="3_yoh68"]
 
 [sub_resource type="Theme" id="Theme_3se44"]
 
@@ -65,3 +66,35 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
+
+[node name="WordLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details" unique_id=294633358]
+layout_mode = 2
+theme = ExtResource("1_fuku2")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "playa"
+
+[node name="HorizontalLine" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details" unique_id=806251494 instance=ExtResource("3_yoh68")]
+layout_mode = 2
+
+[node name="WordEntry" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details" unique_id=1710681770]
+layout_mode = 2
+
+[node name="PartOfSpeech" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details/WordEntry" unique_id=1118810316]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.78431374, 1, 1)
+text = "noun, feminine"
+
+[node name="EnglishGloss" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details/WordEntry" unique_id=492720458]
+layout_mode = 2
+text = "beach"
+
+[node name="Pronunciations" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details/WordEntry" unique_id=596642404]
+layout_mode = 2
+
+[node name="IPAPronunciation" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details/WordEntry/Pronunciations" unique_id=1365971986]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.71683556, 0.8205624, 0.94560677, 1)
+text = "/ˈplaʝa/, [ˈpla.ʝa], /ˈplaʝa/, [ˈpla.ʝa], /ˈplaʝa/, [ˈpla.ʝa], /ˈplaʝa/, [ˈpla.ʝa]"
+autowrap_mode = 3

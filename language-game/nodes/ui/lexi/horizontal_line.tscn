@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bas2ay2m4v5tm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3jdc4"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="HorizontalLine" type="Panel" unique_id=806251494]
+custom_minimum_size = Vector2(0, 3)
+theme_override_styles/panel = SubResource("StyleBoxFlat_3jdc4")
