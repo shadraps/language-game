@@ -6,12 +6,15 @@ class_name LEXI extends CanvasLayer
 
 ## CONSTANTS ##
 
-const DEBUG := false
+const DEBUG := true
 
 ## OTHER VARIABLES ##
 
 var vocab_list: Array
 var vocab_defs: Dictionary
+
+signal _vocab_initialized
+var _vocab_remaining := 0
 
 ## BUILTIN METHODS ##
 
@@ -93,12 +96,28 @@ func _initialize_vocabulary():
 	_dprint("Registered vocab list: ", vocab_list)
 	
 	# looking up and verifying individual words in vocab list
+	_vocab_remaining = vocab_list.size()
 	for word in vocab_list:
-		_dprint("Validating word %s" % word)
-		var data = await look_up(word)
-		if data is String:
-			push_error("The word %s was not able to be validated. Response: ", data)
+		_initialize_one_word(word)
 		
+	if _vocab_remaining > 0:
+		await _vocab_initialized
+		
+	_dprint("Finished validations: ", vocab_defs.keys())
+		
+func _initialize_one_word(word: String):
+	_dprint("Validating word %s" % word)
+	var data = await look_up(word)
+	_vocab_remaining -= 1
+	if _vocab_remaining <= 0:
+		_vocab_initialized.emit()
+	
+	# checking for error message
+	if data is String:
+		push_error("The word %s was not able to be validated. Response: ", data)
+	
+	# adding data and definition entries
+	vocab_defs[word] = data
 
 func _load_vocab_list() -> Array:
 	var file = FileAccess.open(vocab_list_file, FileAccess.READ)
