@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://bwou1av7yxx3h" path="res://scripts/ui/lexi.gd" id="1_fs0np"]
 [ext_resource type="Theme" uid="uid://dosbj14bvn6jl" path="res://resources/themes/main.tres" id="1_fuku2"]
 [ext_resource type="PackedScene" uid="uid://bas2ay2m4v5tm" path="res://nodes/ui/lexi/horizontal_line.tscn" id="3_yoh68"]
+[ext_resource type="PackedScene" uid="uid://5vmdlnf70lrg" path="res://nodes/ui/lexi/spacer.tscn" id="4_cjnww"]
+[ext_resource type="PackedScene" uid="uid://pi7g371u8f52" path="res://nodes/ui/lexi/definition_v_box.tscn" id="4_eclmn"]
+[ext_resource type="PackedScene" uid="uid://bnmdvkvn773m1" path="res://nodes/ui/lexi/quote_rich_text.tscn" id="6_ario6"]
 
 [sub_resource type="Theme" id="Theme_3se44"]
 
@@ -46,6 +49,7 @@ text = "Search"
 [node name="MainContent" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1403570347]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 20
 
 [node name="WordListScroll" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent" unique_id=1223671075]
 layout_mode = 2
@@ -80,21 +84,38 @@ layout_mode = 2
 [node name="WordEntry" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details" unique_id=1710681770]
 layout_mode = 2
 
-[node name="PartOfSpeech" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details/WordEntry" unique_id=1118810316]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.78431374, 1, 1)
-text = "noun, feminine"
-
-[node name="EnglishGloss" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details/WordEntry" unique_id=492720458]
-layout_mode = 2
-text = "beach"
-
-[node name="Pronunciations" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details/WordEntry" unique_id=596642404]
+[node name="Definitions" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details/WordEntry" unique_id=1460311670]
 layout_mode = 2
 
-[node name="IPAPronunciation" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details/WordEntry/Pronunciations" unique_id=1365971986]
+[node name="DefinitionVBox" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details/WordEntry/Definitions" unique_id=529972786 instance=ExtResource("4_eclmn")]
+layout_mode = 2
+
+[node name="Spacer" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details/WordEntry" unique_id=926992628 instance=ExtResource("4_cjnww")]
+layout_mode = 2
+
+[node name="IPAPronunciation" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details/WordEntry" unique_id=1365971986]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.71683556, 0.8205624, 0.94560677, 1)
 text = "/ˈplaʝa/, [ˈpla.ʝa], /ˈplaʝa/, [ˈpla.ʝa], /ˈplaʝa/, [ˈpla.ʝa], /ˈplaʝa/, [ˈpla.ʝa]"
 autowrap_mode = 3
+
+[node name="Spacer2" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details/WordEntry" unique_id=909211004 instance=ExtResource("4_cjnww")]
+layout_mode = 2
+
+[node name="OtherForms" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details/WordEntry" unique_id=996430342]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.7347105, 0.7895559, 1)
+text = "- playas: plural
+- plasha: alternative"
+
+[node name="Spacer3" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details/WordEntry" unique_id=43876566 instance=ExtResource("4_cjnww")]
+layout_mode = 2
+
+[node name="Quotes" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details/WordEntry" unique_id=1927631281]
+layout_mode = 2
+theme = ExtResource("1_fuku2")
+theme_override_constants/separation = 20
+
+[node name="QuoteRichText" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details/WordEntry/Quotes" unique_id=563715536 instance=ExtResource("6_ario6")]
+layout_mode = 2

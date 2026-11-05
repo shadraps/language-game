@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://pi7g371u8f52"]
+
+[node name="DefinitionVBox" type="VBoxContainer" unique_id=529972786]
+
+[node name="PartOfSpeech" type="Label" parent="." unique_id=2037630794]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.78431374, 1, 1)
+text = "noun, feminine"
+
+[node name="EnglishGloss" type="Label" parent="." unique_id=677780379]
+layout_mode = 2
+text = "beach"
