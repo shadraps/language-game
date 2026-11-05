@@ -71,7 +71,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=1211654961]
-scale = Vector2(4, 4)
+scale = Vector2(3.3200006, 3.2799983)
 script = ExtResource("1_bms3g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1052077679]
