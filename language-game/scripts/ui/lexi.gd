@@ -8,13 +8,26 @@ class_name LEXI extends CanvasLayer
 
 const DEBUG := true
 
+const WORD_BUTTON = preload("uid://dfaw4n3nrv3r1")
+
+const BUTTON_SELECTED = Color("#e6b84a")
+
 ## OTHER VARIABLES ##
 
+# gui variables
+@onready var word_list: VBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/MainContent/WordListScroll/WordList
+@onready var details: VBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/Details
+
+# data variables
 var vocab_list: Array
 var vocab_defs: Dictionary
 
+# internal helper variables for initializing/validating vocabulary
 signal _vocab_initialized
 var _vocab_remaining := 0
+
+# gui helper variables
+var _selected_word := ""
 
 ## BUILTIN METHODS ##
 
@@ -31,6 +44,7 @@ func _ready() -> void:
 		
 	# Initializing vocabulary list
 	_initialize_vocabulary()
+	update_display()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -38,6 +52,26 @@ func _process(delta: float) -> void:
 
 ## PUBLIC METHODS ##
 
+# Updating display
+func update_display() -> void:
+	# clearing previous vocab words
+	for word_button in word_list.get_children():
+		word_button.queue_free()
+	
+	for word in vocab_list:
+		# instantiating button
+		var button: Button = WORD_BUTTON.instantiate()
+		button.text = word
+		
+		# coloring button
+		var style := button.get_theme_stylebox("normal").duplicate() as StyleBoxFlat
+		if button.text == _selected_word:
+			style.bg_color = BUTTON_SELECTED
+		button.add_theme_stylebox_override("normal", style)
+		
+		# finalizing button
+		button.pressed.connect(_on_word_button_pressed.bind(word))
+		word_list.add_child(button)
 
 # Looking up words
 func look_up(word: String) -> Variant:
@@ -88,11 +122,21 @@ func look_up(word: String) -> Variant:
 	# returning data
 	return data
 	
+## EVENT LISTENERS
+
+func _on_word_button_pressed(word: String):
+	_dprint("Selected word %s" % word)
+	_selected_word = word
+	
+	# updating display
+	update_display()
+	
 ## PRIVATE HELPER METHODS ##
 
 func _initialize_vocabulary():
 	# getting vocab list as array
 	vocab_list = _load_vocab_list()
+	vocab_list.sort()
 	_dprint("Registered vocab list: ", vocab_list)
 	
 	# looking up and verifying individual words in vocab list
