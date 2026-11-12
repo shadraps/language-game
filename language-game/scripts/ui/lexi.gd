@@ -13,8 +13,10 @@ const BUTTON_SELECTED_BORDER = Color("c631ffff")
 ## OTHER VARIABLES ##
 
 # gui variables
-@onready var word_list: VBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/MainContent/WordListScroll/WordList
-@onready var details_v_box: VBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox
+@onready var main_panel: Panel = $MainPanel
+@onready var word_list: VBoxContainer = $MainPanel/MarginContainer/VBoxContainer/MainContent/WordListScroll/WordList
+@onready var details_v_box: VBoxContainer = $MainPanel/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox
+@onready var close_button: Button = $MainPanel/CloseButtonPanel/CloseButton
 
 const DEFINITION_V_BOX = preload("uid://pi7g371u8f52")
 const HORIZONTAL_LINE = preload("uid://bas2ay2m4v5tm")
@@ -29,6 +31,7 @@ const CREDITS_LABEL = preload("uid://6y86dvm17eg6")
 # data variables
 var vocab_list: Array
 var vocab_defs: Dictionary
+var window_open := false
 
 # internal helper variables for initializing/validating vocabulary
 signal _vocab_initialized
@@ -53,6 +56,10 @@ func _ready() -> void:
 	# Initializing vocabulary list
 	await _initialize_vocabulary()
 	update_display()
+	
+	# Configuring open/close
+	set_window_open(window_open)
+	close_button.pressed.connect(set_window_open.bind(false))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -249,6 +256,10 @@ func _load_vocab_list() -> Array:
 	else:
 		print("JSON Parse Error: ", json.get_error_message())
 		return []
+		
+func set_window_open(to_set: bool) -> void:
+	main_panel.visible = to_set
+	window_open = to_set
 
 func _dprint(...args: Array) -> void:
 	if DEBUG:

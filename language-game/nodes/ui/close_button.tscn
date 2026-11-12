@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://drxt272enuma2"]
+
+[ext_resource type="StyleBox" uid="uid://dii1wnd3tc5y8" path="res://resources/themes/close_button.tres" id="1_kywp6"]
+[ext_resource type="StyleBox" uid="uid://cvt3qyd7m20mh" path="res://resources/themes/close_button_press.tres" id="2_kc038"]
+[ext_resource type="StyleBox" uid="uid://3g25web0g60i" path="res://resources/themes/close_button_hover.tres" id="3_rkqdd"]
+
+[node name="CloseButtonPanel" type="Panel" unique_id=1014263713]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 10.0
+offset_right = -10.0
+grow_horizontal = 0
+
+[node name="CloseButton" type="Button" parent="." unique_id=1836534043]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -37.5
+offset_right = 37.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("1_kywp6")
+theme_override_styles/pressed = ExtResource("2_kc038")
+theme_override_styles/hover = ExtResource("3_rkqdd")
+text = "X"
+icon_alignment = 1

@@ -7,84 +7,94 @@
 [ext_resource type="PackedScene" uid="uid://c0ef17sb7uipi" path="res://nodes/ui/lexi/word_entry.tscn" id="4_cjnww"]
 [ext_resource type="PackedScene" uid="uid://6y86dvm17eg6" path="res://nodes/ui/lexi/credits_label.tscn" id="6_ario6"]
 [ext_resource type="PackedScene" uid="uid://bfn83dq5ipflj" path="res://nodes/ui/lexi/wiktionary_link.tscn" id="6_eclmn"]
+[ext_resource type="PackedScene" uid="uid://drxt272enuma2" path="res://nodes/ui/close_button.tscn" id="8_e6x4l"]
 
 [sub_resource type="Theme" id="Theme_3se44"]
 
 [node name="LEXI" type="CanvasLayer" unique_id=453999833]
 script = ExtResource("1_fs0np")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=478123729]
+[node name="MainPanel" type="Panel" parent="." unique_id=1714184245]
+propagate_maximum_size = true
 anchors_preset = -1
-anchor_left = 0.2
-anchor_top = 0.1
-anchor_right = 0.8
-anchor_bottom = 0.65
+offset_left = 384.0
+offset_top = 108.0
+offset_right = 1536.0
+offset_bottom = 702.0
 theme = ExtResource("1_fuku2")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1266989787]
-layout_mode = 2
+[node name="MarginContainer" type="MarginContainer" parent="MainPanel" unique_id=1266989787]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 1132.0
+offset_bottom = 574.0
 theme = SubResource("Theme_3se44")
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=428287808]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/MarginContainer" unique_id=428287808]
 layout_mode = 2
 
-[node name="Navigation" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2041255107]
+[node name="Navigation" type="HBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=2041255107]
 layout_mode = 2
 
-[node name="SearchText" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/Navigation" unique_id=725269706]
+[node name="SearchText" type="LineEdit" parent="MainPanel/MarginContainer/VBoxContainer/Navigation" unique_id=725269706]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
 placeholder_text = "Search words in either English or Spanish"
 
-[node name="SearchButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Navigation" unique_id=1370928117]
+[node name="SearchButton" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/Navigation" unique_id=1370928117]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Search"
 
-[node name="MainContent" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1403570347]
+[node name="MainContent" type="HBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=1403570347]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 
-[node name="WordListScroll" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent" unique_id=1223671075]
+[node name="WordListScroll" type="ScrollContainer" parent="MainPanel/MarginContainer/VBoxContainer/MainContent" unique_id=1223671075]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="WordList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/WordListScroll" unique_id=1804057197]
+[node name="WordList" type="VBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/MainContent/WordListScroll" unique_id=1804057197]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="DetailsScroll" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent" unique_id=132815717]
+[node name="DetailsScroll" type="ScrollContainer" parent="MainPanel/MarginContainer/VBoxContainer/MainContent" unique_id=132815717]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="DetailsVBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll" unique_id=1469991735]
+[node name="DetailsVBox" type="VBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/MainContent/DetailsScroll" unique_id=1469991735]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="WordLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox" unique_id=1959012017 instance=ExtResource("3_qvqxd")]
+[node name="WordLabel" parent="MainPanel/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox" unique_id=1959012017 instance=ExtResource("3_qvqxd")]
 layout_mode = 2
 
-[node name="HorizontalLine" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox" unique_id=806251494 instance=ExtResource("3_yoh68")]
+[node name="HorizontalLine" parent="MainPanel/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox" unique_id=806251494 instance=ExtResource("3_yoh68")]
 layout_mode = 2
 
-[node name="WordEntry" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox" unique_id=1010648846 instance=ExtResource("4_cjnww")]
+[node name="WordEntry" parent="MainPanel/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox" unique_id=1010648846 instance=ExtResource("4_cjnww")]
 layout_mode = 2
 
-[node name="CreditsLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox" unique_id=1859677390 instance=ExtResource("6_ario6")]
+[node name="CreditsLabel" parent="MainPanel/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox" unique_id=1859677390 instance=ExtResource("6_ario6")]
 layout_mode = 2
 
-[node name="WiktionaryLink" parent="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox" unique_id=1475908266 instance=ExtResource("6_eclmn")]
+[node name="WiktionaryLink" parent="MainPanel/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox" unique_id=1475908266 instance=ExtResource("6_eclmn")]
 layout_mode = 2
 
-[editable path="PanelContainer/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox/WordEntry"]
+[node name="CloseButtonPanel" parent="MainPanel" unique_id=1014263713 instance=ExtResource("8_e6x4l")]
+layout_mode = 1
+
+[editable path="MainPanel/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox/WordEntry"]
+[editable path="MainPanel/CloseButtonPanel"]

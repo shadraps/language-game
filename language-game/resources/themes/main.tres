@@ -75,6 +75,7 @@ MarginContainer/constants/margin_bottom = 20
 MarginContainer/constants/margin_left = 20
 MarginContainer/constants/margin_right = 20
 MarginContainer/constants/margin_top = 20
+Panel/styles/panel = ExtResource("2_lhqq7")
 PanelContainer/styles/panel = ExtResource("2_lhqq7")
 RichTextLabel/constants/line_separation = 12
 RichTextLabel/constants/paragraph_separation = 16
