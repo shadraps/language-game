@@ -6,7 +6,7 @@ class_name LEXI extends CanvasLayer
 
 ## CONSTANTS ##
 
-const DEBUG := true
+const DEBUG := false
 
 const BUTTON_SELECTED_BORDER = Color("c631ffff")
 
@@ -45,6 +45,12 @@ var _selected_word := ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Configuring open/close
+	set_window_open(window_open)
+	close_button.pressed.connect(set_window_open.bind(false))
+	open_button.pressed.connect(toggle_window_open.bind())
+	
+	# debug testing
 	if DEBUG:
 		var result1 = await look_up("playa")
 		var result2 = await look_up("yay")
@@ -53,11 +59,6 @@ func _ready() -> void:
 		_dprint("playa: ", result1)
 		_dprint("yay: ", result2)
 		_dprint("playat: ", result3)
-	
-	# Configuring open/close
-	set_window_open(window_open)
-	close_button.pressed.connect(set_window_open.bind(false))
-	open_button.pressed.connect(toggle_window_open.bind())
 		
 	# Initializing vocabulary list
 	await _initialize_vocabulary()

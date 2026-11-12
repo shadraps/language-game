@@ -79,15 +79,6 @@ theme_override_constants/separation = 25
 [node name="Word" parent="MainPanel/MarginContainer/VBoxContainer/MainContent/WordListScroll/WordList" unique_id=2008645173 instance=ExtResource("3_7i4wb")]
 layout_mode = 2
 
-[node name="Word2" parent="MainPanel/MarginContainer/VBoxContainer/MainContent/WordListScroll/WordList" unique_id=312646469 instance=ExtResource("3_7i4wb")]
-layout_mode = 2
-
-[node name="Word3" parent="MainPanel/MarginContainer/VBoxContainer/MainContent/WordListScroll/WordList" unique_id=2064418027 instance=ExtResource("3_7i4wb")]
-layout_mode = 2
-
-[node name="Word4" parent="MainPanel/MarginContainer/VBoxContainer/MainContent/WordListScroll/WordList" unique_id=1180812482 instance=ExtResource("3_7i4wb")]
-layout_mode = 2
-
 [node name="DetailsScroll" type="ScrollContainer" parent="MainPanel/MarginContainer/VBoxContainer/MainContent" unique_id=132815717]
 layout_mode = 2
 size_flags_horizontal = 3
