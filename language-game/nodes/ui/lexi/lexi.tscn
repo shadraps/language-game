@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bwou1av7yxx3h" path="res://scripts/ui/lexi.gd" id="1_fs0np"]
 [ext_resource type="Theme" uid="uid://dosbj14bvn6jl" path="res://resources/themes/main.tres" id="1_fuku2"]
+[ext_resource type="PackedScene" uid="uid://dfaw4n3nrv3r1" path="res://nodes/ui/lexi/word_button.tscn" id="3_7i4wb"]
 [ext_resource type="PackedScene" uid="uid://btsrlavrw467n" path="res://nodes/ui/lexi/word_label.tscn" id="3_qvqxd"]
 [ext_resource type="PackedScene" uid="uid://bas2ay2m4v5tm" path="res://nodes/ui/lexi/horizontal_line.tscn" id="3_yoh68"]
 [ext_resource type="PackedScene" uid="uid://c0ef17sb7uipi" path="res://nodes/ui/lexi/word_entry.tscn" id="4_cjnww"]
@@ -10,6 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://drxt272enuma2" path="res://nodes/ui/close_button.tscn" id="8_e6x4l"]
 
 [sub_resource type="Theme" id="Theme_3se44"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3se44"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
 
 [node name="LEXI" type="CanvasLayer" unique_id=453999833]
 script = ExtResource("1_fs0np")
@@ -61,11 +68,25 @@ theme_override_constants/separation = 20
 [node name="WordListScroll" type="ScrollContainer" parent="MainPanel/MarginContainer/VBoxContainer/MainContent" unique_id=1223671075]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3se44")
 
 [node name="WordList" type="VBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/MainContent/WordListScroll" unique_id=1804057197]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 25
+
+[node name="Word" parent="MainPanel/MarginContainer/VBoxContainer/MainContent/WordListScroll/WordList" unique_id=2008645173 instance=ExtResource("3_7i4wb")]
+layout_mode = 2
+
+[node name="Word2" parent="MainPanel/MarginContainer/VBoxContainer/MainContent/WordListScroll/WordList" unique_id=312646469 instance=ExtResource("3_7i4wb")]
+layout_mode = 2
+
+[node name="Word3" parent="MainPanel/MarginContainer/VBoxContainer/MainContent/WordListScroll/WordList" unique_id=2064418027 instance=ExtResource("3_7i4wb")]
+layout_mode = 2
+
+[node name="Word4" parent="MainPanel/MarginContainer/VBoxContainer/MainContent/WordListScroll/WordList" unique_id=1180812482 instance=ExtResource("3_7i4wb")]
+layout_mode = 2
 
 [node name="DetailsScroll" type="ScrollContainer" parent="MainPanel/MarginContainer/VBoxContainer/MainContent" unique_id=132815717]
 layout_mode = 2
@@ -95,6 +116,16 @@ layout_mode = 2
 
 [node name="CloseButtonPanel" parent="MainPanel" unique_id=1014263713 instance=ExtResource("8_e6x4l")]
 layout_mode = 1
+
+[node name="OpenButton" type="Button" parent="." unique_id=1906434114]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 40.0
+offset_right = -40.0
+grow_horizontal = 0
+theme = ExtResource("1_fuku2")
+text = "LEXI"
 
 [editable path="MainPanel/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox/WordEntry"]
 [editable path="MainPanel/CloseButtonPanel"]

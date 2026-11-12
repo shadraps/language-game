@@ -2,6 +2,23 @@
 
 [ext_resource type="Theme" uid="uid://dosbj14bvn6jl" path="res://resources/themes/main.tres" id="1_46sh1"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kncsd"]
+bg_color = Color(0.10527172, 0.101017825, 0.18423107, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.24827799, 0.23854643, 0.3876134, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
 [node name="Word" type="Button" unique_id=2008645173]
 theme = ExtResource("1_46sh1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kncsd")
 text = "playa"

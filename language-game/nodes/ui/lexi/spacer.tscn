@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://5vmdlnf70lrg"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lhqq7"]
+
 [node name="Spacer" type="Panel" unique_id=926992628]
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lhqq7")
