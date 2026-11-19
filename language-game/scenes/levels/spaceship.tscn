@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dhlp2x0amjit5"]
 
-[ext_resource type="PackedScene" uid="uid://cvpb86u3bbh8y" path="res://nodes/dialog/start_dialog.tscn" id="1_ba77c"]
+[ext_resource type="PackedScene" uid="uid://cvpb86u3bbh8y" path="res://nodes/ui/dialog/start_dialog.tscn" id="1_ba77c"]
 [ext_resource type="PackedScene" uid="uid://b43mb7i5pbvdb" path="res://scenes/level_designs/spaceship.tscn" id="2_fthwo"]
 [ext_resource type="PackedScene" uid="uid://oqwbubno4dgk" path="res://nodes/player.tscn" id="3_ldcya"]
 
@@ -21,7 +21,7 @@ scale = Vector2(2.4650867, 2.6816692)
 position = Vector2(-0.19998169, 0)
 scale = Vector2(1, 1.0000001)
 zoom = Vector2(2, 2)
-limit_left = -79
+limit_left = -78
 limit_top = -11
-limit_right = 733
+limit_right = 734
 limit_bottom = 496
