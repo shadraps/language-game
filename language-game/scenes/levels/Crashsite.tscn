@@ -3,6 +3,7 @@
 [ext_resource type="TileSet" uid="uid://bgjo8tn3nocps" path="res://resources/tilemap/tileset.tres" id="1_4htpg"]
 [ext_resource type="PackedScene" uid="uid://oqwbubno4dgk" path="res://nodes/player.tscn" id="2_cq85x"]
 [ext_resource type="Texture2D" uid="uid://pjsb0g1wt483" path="res://sprites/Exteriors/spaceship.png" id="3_cq85x"]
+[ext_resource type="PackedScene" uid="uid://c3bkm1fvfg5ah" path="res://nodes/ui/lexi/lexi.tscn" id="4_ybqcj"]
 
 [node name="Node2D" type="Node2D" unique_id=83024484]
 y_sort_enabled = true
@@ -42,3 +43,6 @@ z_index = 1
 y_sort_enabled = true
 scale = Vector2(1.7291666, 1.7291666)
 texture = ExtResource("3_cq85x")
+
+[node name="LEXI" parent="." unique_id=453999833 instance=ExtResource("4_ybqcj")]
+vocab_list_file = "res://dictionary/example_vocab_list.json"
