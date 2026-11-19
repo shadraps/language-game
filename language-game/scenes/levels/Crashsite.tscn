@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://bgjo8tn3nocps" path="res://resources/tilemap/tileset.tres" id="1_4htpg"]
 [ext_resource type="PackedScene" uid="uid://oqwbubno4dgk" path="res://nodes/player.tscn" id="2_cq85x"]
+[ext_resource type="Texture2D" uid="uid://pjsb0g1wt483" path="res://sprites/Exteriors/spaceship.png" id="3_cq85x"]
 
 [node name="Node2D" type="Node2D" unique_id=83024484]
 y_sort_enabled = true
@@ -20,12 +21,24 @@ tile_set = ExtResource("1_4htpg")
 [node name="Player" parent="." unique_id=1211654961 instance=ExtResource("2_cq85x")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(525, 630)
+position = Vector2(493, 746)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2090483686]
 zoom = Vector2(2, 2)
-limit_left = 0
-limit_top = 0
-limit_right = 1920
-limit_bottom = 1060
+limit_left = 1
+limit_top = 1
+limit_right = 1921
+limit_bottom = 1061
 position_smoothing_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1503780607]
+position = Vector2(480, 550)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=515527664]
+polygon = PackedVector2Array(-103, 31, -68, 3, -8, -19, 63, -26, 108, -15, 122, 7, 115, 33, 77, 60, 13, 87, -46, 93, -101, 82, -115, 56)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=2073706663]
+z_index = 1
+y_sort_enabled = true
+scale = Vector2(1.7291666, 1.7291666)
+texture = ExtResource("3_cq85x")
