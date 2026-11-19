@@ -18,6 +18,7 @@ const BUTTON_SELECTED_BORDER = Color("c631ffff")
 @onready var details_v_box: VBoxContainer = $MainPanel/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox
 @onready var close_button: Button = $MainPanel/CloseButtonPanel/CloseButton
 @onready var open_button: Button = $OpenButton
+@onready var search_text: LineEdit = $MainPanel/MarginContainer/VBoxContainer/Navigation/SearchText
 
 const DEFINITION_V_BOX = preload("uid://pi7g371u8f52")
 const HORIZONTAL_LINE = preload("uid://bas2ay2m4v5tm")
@@ -40,6 +41,7 @@ var _vocab_remaining := 0
 
 # gui helper variables
 var _selected_word := ""
+var _search_text := ""
 
 ## BUILTIN METHODS ##
 
@@ -83,6 +85,10 @@ func update_display() -> void:
 	
 	# adding new vocab words
 	for word in vocab_list:
+		# checking if word filtered out
+		if _search_text != "" and not word.begins_with(_search_text):
+			continue
+		
 		# instantiating button
 		var button: Button = WORD_BUTTON.instantiate()
 		button.text = word
@@ -213,6 +219,12 @@ func look_up(word: String) -> Variant:
 	return data
 	
 ## EVENT LISTENERS
+
+func _on_search_button_pressed() -> void:
+	_search_text = search_text.text
+	_dprint("Attempt to search ", _search_text)
+	update_display()
+	
 
 func _on_word_button_pressed(word: String):
 	_dprint("Selected word %s" % word)

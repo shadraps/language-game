@@ -118,5 +118,7 @@ grow_horizontal = 0
 theme = ExtResource("1_fuku2")
 text = "LEXI"
 
+[connection signal="pressed" from="MainPanel/MarginContainer/VBoxContainer/Navigation/SearchButton" to="." method="_on_search_button_pressed"]
+
 [editable path="MainPanel/MarginContainer/VBoxContainer/MainContent/DetailsScroll/DetailsVBox/WordEntry"]
 [editable path="MainPanel/CloseButtonPanel"]
