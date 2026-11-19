@@ -47,6 +47,9 @@ var _search_text := ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# making visible
+	visible = true
+	
 	# Configuring open/close
 	set_window_open(window_open)
 	close_button.pressed.connect(set_window_open.bind(false))

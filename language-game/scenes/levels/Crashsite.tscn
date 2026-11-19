@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://bgjo8tn3nocps" path="res://resources/tilemap/tileset.tres" id="1_4htpg"]
 [ext_resource type="PackedScene" uid="uid://oqwbubno4dgk" path="res://nodes/player.tscn" id="2_cq85x"]
-[ext_resource type="Texture2D" uid="uid://pjsb0g1wt483" path="res://sprites/Exteriors/spaceship.png" id="3_cq85x"]
+[ext_resource type="PackedScene" uid="uid://1c525q4snifr" path="res://nodes/map/spaceship.tscn" id="3_cq85x"]
 [ext_resource type="PackedScene" uid="uid://c3bkm1fvfg5ah" path="res://nodes/ui/lexi/lexi.tscn" id="4_ybqcj"]
 
 [node name="Node2D" type="Node2D" unique_id=83024484]
@@ -32,17 +32,9 @@ limit_right = 1921
 limit_bottom = 1061
 position_smoothing_enabled = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1503780607]
+[node name="Spaceship" parent="." unique_id=1421541526 instance=ExtResource("3_cq85x")]
 position = Vector2(480, 550)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=515527664]
-polygon = PackedVector2Array(-103, 31, -68, 3, -8, -19, 63, -26, 108, -15, 122, 7, 115, 33, 77, 60, 13, 87, -46, 93, -101, 82, -115, 56)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=2073706663]
-z_index = 1
-y_sort_enabled = true
-scale = Vector2(1.7291666, 1.7291666)
-texture = ExtResource("3_cq85x")
-
 [node name="LEXI" parent="." unique_id=453999833 instance=ExtResource("4_ybqcj")]
+visible = false
 vocab_list_file = "res://dictionary/example_vocab_list.json"

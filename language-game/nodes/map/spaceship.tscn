@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://1c525q4snifr"]
 
 [ext_resource type="Texture2D" uid="uid://pjsb0g1wt483" path="res://sprites/Exteriors/spaceship.png" id="1_npad7"]
+[ext_resource type="PackedScene" uid="uid://p54poafnfgiw" path="res://nodes/interactibles/interactible.tscn" id="2_j1fbm"]
 
-[node name="Spaceship" type="RigidBody2D" unique_id=1759483183]
+[node name="Spaceship" type="StaticBody2D" unique_id=1421541526]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=515527664]
-polygon = PackedVector2Array(-103, 31, -68, 3, -8, -19, 63, -26, 108, -15, 122, 7, 115, 33, 77, 60, 13, 87, -46, 93, -92, 89, -115, 78, -118, 62, -114, 44)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1094539755]
+polygon = PackedVector2Array(-103, 31, -68, 3, -8, -19, 63, -26, 108, -15, 122, 7, 115, 33, 77, 60, 13, 87, -46, 93, -101, 82, -115, 56)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2073706663]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=239655817]
 z_index = 1
 y_sort_enabled = true
 scale = Vector2(1.7291666, 1.7291666)
 texture = ExtResource("1_npad7")
+
+[node name="Interactible" parent="." unique_id=813667143 instance=ExtResource("2_j1fbm")]

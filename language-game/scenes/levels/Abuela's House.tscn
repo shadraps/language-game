@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://bgjo8tn3nocps" path="res://resources/tilemap/tileset.tres" id="1_t4gn6"]
 [ext_resource type="PackedScene" uid="uid://oqwbubno4dgk" path="res://nodes/player.tscn" id="2_s45x4"]
+[ext_resource type="PackedScene" uid="uid://c3bkm1fvfg5ah" path="res://nodes/ui/lexi/lexi.tscn" id="3_lrxp1"]
 
 [node name="Node2D" type="Node2D" unique_id=1586937149]
 
@@ -18,7 +19,7 @@ tile_map_data = PackedByteArray("AAAWABEAAgALAAAAAAASAA4AAgAIAAcAAAASABAAAgAIAAc
 tile_set = ExtResource("1_t4gn6")
 
 [node name="Player" parent="." unique_id=1211654961 instance=ExtResource("2_s45x4")]
-position = Vector2(761.99994, 664.99994)
+position = Vector2(71, 1021.00006)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1100509122]
 zoom = Vector2(2, 2)
@@ -27,3 +28,6 @@ limit_top = 0
 limit_right = 1920
 limit_bottom = 1080
 position_smoothing_enabled = true
+
+[node name="LEXI" parent="." unique_id=453999833 instance=ExtResource("3_lrxp1")]
+visible = false
