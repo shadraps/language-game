@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://oqwbubno4dgk" path="res://nodes/player.tscn" id="2_cq85x"]
 [ext_resource type="PackedScene" uid="uid://1c525q4snifr" path="res://nodes/map/spaceship.tscn" id="3_cq85x"]
 [ext_resource type="PackedScene" uid="uid://c3bkm1fvfg5ah" path="res://nodes/ui/lexi/lexi.tscn" id="4_ybqcj"]
+[ext_resource type="PackedScene" uid="uid://cvpb86u3bbh8y" path="res://nodes/ui/dialog/start_dialog.tscn" id="6_qplvp"]
 
 [node name="Node2D" type="Node2D" unique_id=83024484]
 y_sort_enabled = true
@@ -44,3 +45,7 @@ position = Vector2(480, 550)
 [node name="LEXI" parent="." unique_id=453999833 instance=ExtResource("4_ybqcj")]
 visible = false
 vocab_list_file = "res://dictionary/example_vocab_list.json"
+
+[node name="StartDialog" parent="." unique_id=1563343341 instance=ExtResource("6_qplvp")]
+prompt_dialog = "Intro"
+dialog_file = "res://dialog/game_intro.json"
