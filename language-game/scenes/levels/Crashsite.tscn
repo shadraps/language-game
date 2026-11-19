@@ -3,7 +3,9 @@
 [ext_resource type="TileSet" uid="uid://bgjo8tn3nocps" path="res://resources/tilemap/tileset.tres" id="1_4htpg"]
 [ext_resource type="PackedScene" uid="uid://oqwbubno4dgk" path="res://nodes/player.tscn" id="2_cq85x"]
 [ext_resource type="PackedScene" uid="uid://1c525q4snifr" path="res://nodes/map/spaceship.tscn" id="3_cq85x"]
-[ext_resource type="PackedScene" uid="uid://c3bkm1fvfg5ah" path="res://nodes/ui/lexi/lexi.tscn" id="4_ybqcj"]
+[ext_resource type="PackedScene" uid="uid://dd28c526j41aa" path="res://nodes/map/border_collider.tscn" id="5_32dp8"]
+[ext_resource type="PackedScene" uid="uid://p54poafnfgiw" path="res://nodes/interactibles/interactible.tscn" id="7_ntmwg"]
+[ext_resource type="Script" uid="uid://bttblrw34w4w0" path="res://scripts/interactions/door_interactible.gd" id="8_1px67"]
 
 [node name="Node2D" type="Node2D" unique_id=83024484]
 y_sort_enabled = true
@@ -21,7 +23,7 @@ tile_set = ExtResource("1_4htpg")
 [node name="Trees and Things" type="TileMapLayer" parent="." unique_id=1889679520]
 z_index = 2
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAGAAgABQAIAAgAAAARAA0ABQAAAAAAAAAEAA4ABQAIAAgAAAAYAA0ABQAIAAgAAAAXAAQABQAIAAgAAAAIAAkABgACAAgAAAATAAkABgAEAAgAAAATAA8ABgAGAAgAAAACABAABgAGAAgAAAAUAAcABgAGAAgAAAAPABAABgAHAAoAAAAeAAkABgAHAAoAAAAfAA8AAAAMAAgAAAAfAAcAAAAMAAgAAAAfAAsAAAAMAAgAAAADAAMABQAAAAAAAAAMAAcABQAIAAgAAAAJAAQAAAAIAAIAAAAPAAIABQAAAAAAAAAjAA8AAAAMAAgAAAAjAAsAAAAMAAgAAAAjAAcAAAAMAAgAAAAnAA8AAAAMAAgAAAAnAAsAAAAMAAgAAAAnAAcAAAAMAAgAAAAEAAsABgAIAAAAAAA=")
+tile_map_data = PackedByteArray("AAAGAAgABQAIAAgAAAARAA0ABQAAAAAAAAAEAA4ABQAIAAgAAAAYAA0ABQAIAAgAAAAXAAQABQAIAAgAAAAIAAkABgACAAgAAAATAAkABgAEAAgAAAATAA8ABgAGAAgAAAAUAAcABgAGAAgAAAAPABAABgAHAAoAAAAeAAkABgAHAAoAAAAfAA8AAAAMAAgAAAAfAAcAAAAMAAgAAAAfAAsAAAAMAAgAAAADAAMABQAAAAAAAAAMAAcABQAIAAgAAAAJAAQAAAAIAAIAAAAPAAIABQAAAAAAAAAjAA8AAAAMAAgAAAAjAAsAAAAMAAgAAAAjAAcAAAAMAAgAAAAnAA8AAAAMAAgAAAAnAAsAAAAMAAgAAAAnAAcAAAAMAAgAAAAEAAsABgAIAAAAAAACABAABgAGAAgAAAA=")
 tile_set = ExtResource("1_4htpg")
 
 [node name="Player" parent="." unique_id=1211654961 instance=ExtResource("2_cq85x")]
@@ -41,6 +43,14 @@ position_smoothing_enabled = true
 z_index = 1
 position = Vector2(480, 550)
 
-[node name="LEXI" parent="." unique_id=453999833 instance=ExtResource("4_ybqcj")]
-visible = false
-vocab_list_file = "res://dictionary/example_vocab_list.json"
+[node name="BorderCollider" parent="." unique_id=826314917 instance=ExtResource("5_32dp8")]
+
+[node name="Bottom" parent="BorderCollider" index="3" unique_id=1739080786]
+position = Vector2(0, 70.515)
+
+[node name="DoorInteractible" parent="." unique_id=813667143 instance=ExtResource("7_ntmwg")]
+script = ExtResource("8_1px67")
+teleport_scene = "uid://g4bkehv6peqe"
+player_spawn_pos = Vector2(71, 1021.00006)
+
+[editable path="BorderCollider"]

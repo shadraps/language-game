@@ -19,14 +19,14 @@ b = Vector2(2000, 1080)
 [node name="BorderCollider" type="StaticBody2D" unique_id=826314917]
 physics_material_override = SubResource("PhysicsMaterial_3se44")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1808607089]
+[node name="Left" type="CollisionShape2D" parent="." unique_id=1808607089]
 shape = SubResource("SegmentShape2D_dt32y")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1394209420]
+[node name="Top" type="CollisionShape2D" parent="." unique_id=1394209420]
 shape = SubResource("SegmentShape2D_037n5")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=2054060801]
+[node name="Right" type="CollisionShape2D" parent="." unique_id=2054060801]
 shape = SubResource("SegmentShape2D_ouarq")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1739080786]
+[node name="Bottom" type="CollisionShape2D" parent="." unique_id=1739080786]
 shape = SubResource("SegmentShape2D_5hjxr")

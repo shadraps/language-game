@@ -4,6 +4,8 @@ class_name Player extends CharacterBody2D
 
 var direction: Vector2 = Vector2.ZERO
 
+const DEBUG := true
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	state_machine.Initialize(self)
@@ -17,3 +19,9 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()
+	_dprint("Collisions: ", get_slide_collision_count())
+
+
+func _dprint(...args: Array) -> void:
+	if DEBUG:
+		print.callv(args)

@@ -1,26 +1,27 @@
 [gd_scene format=3 uid="uid://2poabspybyjh"]
 
-[ext_resource type="PackedScene" uid="uid://oqwbubno4dgk" path="res://nodes/player.tscn" id="1_5hjxr"]
 [ext_resource type="PackedScene" uid="uid://cvpb86u3bbh8y" path="res://nodes/ui/dialog/start_dialog.tscn" id="2_5hjxr"]
-[ext_resource type="PackedScene" uid="uid://dd28c526j41aa" path="res://nodes/map/border_collider.tscn" id="3_dt32y"]
 [ext_resource type="PackedScene" uid="uid://c3bkm1fvfg5ah" path="res://nodes/ui/lexi/lexi.tscn" id="4_037n5"]
 [ext_resource type="Script" uid="uid://ywanybcux1un" path="res://scripts/gameplay/scene_manager.gd" id="5_ouarq"]
+[ext_resource type="PackedScene" uid="uid://btnlch2ojxicm" path="res://scenes/levels/Crashsite.tscn" id="6_o7bui"]
+[ext_resource type="PackedScene" uid="uid://g4bkehv6peqe" path="res://scenes/levels/Abuela's House.tscn" id="7_61f2a"]
 
 [node name="GameIntro2" type="Node2D" unique_id=1760251689]
 
-[node name="Player" parent="." unique_id=1211654961 instance=ExtResource("1_5hjxr")]
-position = Vector2(957, 526)
+[node name="SceneManager" type="Node" parent="." unique_id=1631648649]
+script = ExtResource("5_ouarq")
+
+[node name="Scenes" type="Node2D" parent="SceneManager" unique_id=2049513155]
+
+[node name="Crashsite" parent="SceneManager/Scenes" unique_id=83024484 instance=ExtResource("6_o7bui")]
+visible = false
+
+[node name="AbuelaHouse" parent="SceneManager/Scenes" unique_id=1586937149 instance=ExtResource("7_61f2a")]
+visible = false
 
 [node name="StartDialog" parent="." unique_id=1563343341 instance=ExtResource("2_5hjxr")]
 prompt_dialog = "Intro"
 dialog_file = "res://dialog/game_intro.json"
 
-[node name="BorderCollider" parent="." unique_id=826314917 instance=ExtResource("3_dt32y")]
-
 [node name="LEXI" parent="." unique_id=453999833 instance=ExtResource("4_037n5")]
 vocab_list_file = "res://dictionary/example_vocab_list.json"
-
-[node name="SceneManager" type="Node" parent="." unique_id=1631648649]
-script = ExtResource("5_ouarq")
-crash_scene = "uid://btnlch2ojxicm"
-abuela_house = "uid://g4bkehv6peqe"
