@@ -71,7 +71,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=1211654961]
-scale = Vector2(3.3200006, 3.2799983)
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_bms3g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1052077679]
@@ -92,7 +92,7 @@ script = ExtResource("4_hqdnm")
 
 [node name="Walk" type="Node" parent="StateMachine" unique_id=1139135848]
 script = ExtResource("5_7lbay")
-move_speed = 300.0
+move_speed = 150.0
 
 [node name="DialogInteractionArea" type="Area2D" parent="." unique_id=780083867]
 collision_layer = 2

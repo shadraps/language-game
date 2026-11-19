@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cvpb86u3bbh8y" path="res://nodes/ui/dialog/start_dialog.tscn" id="2_5hjxr"]
 [ext_resource type="PackedScene" uid="uid://dd28c526j41aa" path="res://nodes/map/border_collider.tscn" id="3_dt32y"]
 [ext_resource type="PackedScene" uid="uid://c3bkm1fvfg5ah" path="res://nodes/ui/lexi/lexi.tscn" id="4_037n5"]
+[ext_resource type="Script" uid="uid://ywanybcux1un" path="res://scripts/gameplay/scene_manager.gd" id="5_ouarq"]
 
 [node name="GameIntro2" type="Node2D" unique_id=1760251689]
 
@@ -18,3 +19,8 @@ dialog_file = "res://dialog/game_intro.json"
 
 [node name="LEXI" parent="." unique_id=453999833 instance=ExtResource("4_037n5")]
 vocab_list_file = "res://dictionary/example_vocab_list.json"
+
+[node name="SceneManager" type="Node" parent="." unique_id=1631648649]
+script = ExtResource("5_ouarq")
+crash_scene = "uid://btnlch2ojxicm"
+abuela_house = "uid://g4bkehv6peqe"
