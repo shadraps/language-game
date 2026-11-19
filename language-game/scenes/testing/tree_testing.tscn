@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://grfdwpw4slp3"]
+[gd_scene format=4 uid="uid://bprbp2uukmbbl"]
 
 [ext_resource type="PackedScene" uid="uid://cvpb86u3bbh8y" path="res://nodes/dialog/start_dialog.tscn" id="1_a5cgt"]
 [ext_resource type="Texture2D" uid="uid://c2bjbiqmjf6n0" path="res://sprites/Exteriors/Park grass, and flowers.png" id="1_b2cv8"]
